@@ -178,8 +178,24 @@ const About = () => (
       </div>
     </section>
 
-    {/* PARTNERS */}
+    {/* STICKERS */}
     <section className="py-24 bg-cool-gray">
+      <div className="container">
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <h2 className="font-display text-5xl md:text-6xl text-navy">Stickers Are Real.</h2>
+          <Sticker variant="arrow" color="green" rotate={-3} className="text-base">
+            FREE WITH ENTRY
+          </Sticker>
+        </div>
+        <p className="mt-3 text-muted-foreground italic">we hand them out. you stick them places. it's a whole thing.</p>
+        <div className="mt-10 rounded-3xl overflow-hidden bg-white border-4 border-navy shadow-[0_10px_0_hsl(var(--navy))]">
+          <img src={stickers} alt="HaHaHouse stickers" className="w-full h-auto block" />
+        </div>
+      </div>
+    </section>
+
+    {/* PARTNERS */}
+    <section className="py-24 bg-white">
       <div className="container">
         <h2 className="font-display text-5xl md:text-6xl text-navy">People We Like.</h2>
         <p className="mt-3 text-muted-foreground italic">they believed in us before it was obvious.</p>
@@ -187,7 +203,7 @@ const About = () => (
           {Array.from({ length: 6 }).map((_, i) => (
             <div
               key={i}
-              className="h-16 rounded-xl bg-white grid place-items-center font-display text-navy/40 grayscale hover:grayscale-0 hover:text-primary transition"
+              className="h-16 rounded-xl bg-cool-gray grid place-items-center font-display text-navy/40 grayscale hover:grayscale-0 hover:text-primary transition"
             >
               LOGO {i + 1}
             </div>
