@@ -92,8 +92,8 @@ const Index = () => {
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 pointer-events-none">
           <RotatingHeadline
             messages={[
-              "LIKE A MUSEUM. BUT FUNNY.",
-              "40+ EXHIBITS DESIGNED TO MAKE YOU LAUGH.",
+              "Placeholder",
+              "Placeholder",
             ]}
             hold={5000}
             fade={600}
