@@ -109,7 +109,7 @@ const Index = () => {
         {/* Tickets corner */}
         <Link
           to="/tickets"
-          className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20 inline-flex items-center rounded-full bg-yellow text-navy font-bold px-6 py-3 md:px-8 md:py-4 shadow-[0_8px_0_rgba(0,0,0,0.25)] hover:bg-red hover:text-white transition-colors"
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 md:bottom-20 z-20 inline-flex items-center rounded-full bg-yellow text-navy font-bold px-6 py-3 md:px-8 md:py-4 shadow-[0_8px_0_rgba(0,0,0,0.25)] hover:bg-red hover:text-white transition-colors"
         >
           BUY TICKETS
         </Link>
