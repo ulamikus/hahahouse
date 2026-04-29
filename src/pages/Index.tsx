@@ -40,6 +40,8 @@ const reviews = [
 ];
 
 const Index = () => {
+  const [loopCount, setLoopCount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
   return (
     <Layout>
       {/* HERO — full-bleed walkthrough video, Color Factory style */}
