@@ -7,7 +7,7 @@ import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
 import RotatingHeadline from "@/components/site/RotatingHeadline";
 import collage from "@/assets/brand-collage.jpg";
-import roundLogo from "@/assets/brand-logo.jpg";
+import roundLogo from "@/assets/haha-hero-logo.png";
 import exhibit1 from "@/assets/exhibit-1.jpg";
 import exhibit2 from "@/assets/exhibit-2.jpg";
 import exhibit3 from "@/assets/exhibit-3.jpg";
