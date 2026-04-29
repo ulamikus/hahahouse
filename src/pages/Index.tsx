@@ -7,7 +7,7 @@ import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
 import RotatingHeadline from "@/components/site/RotatingHeadline";
 import collage from "@/assets/brand-collage.jpg";
-import roundLogo from "@/assets/brand-logo.jpg";
+import roundLogo from "@/assets/haha-hero-logo.png";
 import exhibit1 from "@/assets/exhibit-1.jpg";
 import exhibit2 from "@/assets/exhibit-2.jpg";
 import exhibit3 from "@/assets/exhibit-3.jpg";
@@ -84,7 +84,7 @@ const Index = () => {
           <img
             src={roundLogo}
             alt="HaHa House"
-            className="h-[72px] w-[72px] md:h-[110px] md:w-[110px] rounded-full object-cover shadow-[0_6px_24px_rgba(0,0,0,0.35)] ring-2 ring-white/80"
+            className="h-[72px] w-[72px] md:h-[110px] md:w-[110px] rounded-full object-contain drop-shadow-[0_6px_24px_rgba(0,0,0,0.35)]"
           />
         </Link>
 
