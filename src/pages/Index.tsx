@@ -84,7 +84,7 @@ const Index = () => {
           <img
             src={roundLogo}
             alt="HaHa House"
-            className="h-[72px] w-[72px] md:h-[110px] md:w-[110px] rounded-full object-cover shadow-[0_6px_24px_rgba(0,0,0,0.35)] ring-2 ring-white/80"
+            className="h-[72px] w-[72px] md:h-[110px] md:w-[110px] rounded-full object-contain drop-shadow-[0_6px_24px_rgba(0,0,0,0.35)]"
           />
         </Link>
 
