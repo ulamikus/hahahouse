@@ -2,36 +2,28 @@ import { Link } from "react-router-dom";
 import { Instagram, Facebook, Youtube, Star, MapPin, Clock, Mail } from "lucide-react";
 import Layout from "@/components/site/Layout";
 import Doodles from "@/components/site/Doodles";
+import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
+import collage from "@/assets/brand-collage.jpg";
+import bubble from "@/assets/brand-logo-dark.png";
+import mrH from "@/assets/character-mrh.jpg";
 import exhibit1 from "@/assets/exhibit-1.jpg";
 import exhibit2 from "@/assets/exhibit-2.jpg";
 import exhibit3 from "@/assets/exhibit-3.jpg";
 import exhibit4 from "@/assets/exhibit-4.jpg";
 
 const exhibits = [
-  { img: exhibit1, label: "Neon Hall" },
-  { img: exhibit2, label: "Inflatable Room" },
-  { img: exhibit3, label: "Mirror Maze" },
-  { img: exhibit4, label: "The Tunnel" },
-  { img: exhibit1, label: "More Stuff" },
+  { img: exhibit1, label: "Neon Hall", color: "bg-yellow" },
+  { img: exhibit2, label: "Inflatable Room", color: "bg-red" },
+  { img: exhibit3, label: "Mirror Maze", color: "bg-turquoise" },
+  { img: exhibit4, label: "The Tunnel", color: "bg-orange" },
+  { img: exhibit1, label: "More Stuff", color: "bg-green" },
 ];
 
 const offers = [
-  {
-    emoji: "🎂",
-    title: "Birthdays",
-    desc: "Another year older. At least you'll actually laugh this time.",
-  },
-  {
-    emoji: "🏆",
-    title: "Team Building",
-    desc: "Your team needs this. Your team will deny needing this. Book it anyway.",
-  },
-  {
-    emoji: "🎉",
-    title: "Pregame Party",
-    desc: "Start here. Everything after is your problem.",
-  },
+  { emoji: "🎂", title: "Birthdays", desc: "Another year older. At least you'll actually laugh this time.", color: "bg-yellow" },
+  { emoji: "🏆", title: "Team Building", desc: "Your team needs this. Your team will deny needing this. Book it anyway.", color: "bg-turquoise" },
+  { emoji: "🎉", title: "Pregame Party", desc: "Start here. Everything after is your problem.", color: "bg-red text-white" },
 ];
 
 const events = [
@@ -51,21 +43,40 @@ const Index = () => {
     <Layout>
       {/* HERO */}
       <section className="relative bg-primary text-white overflow-hidden min-h-[92vh] flex items-center">
-        <Doodles />
+        <Doodles variant="wallpaper" tone="dark" />
+
+        {/* Mr.H peeking from the right */}
+        <img
+          src={mrH}
+          alt=""
+          aria-hidden
+          className="hidden lg:block absolute -right-12 bottom-0 w-[420px] z-10 select-none pointer-events-none"
+        />
+
+        {/* Sticker accents */}
+        <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-32 h-32 text-sm hidden md:grid z-20">
+          MUZEJ<br/>SMIJEHA
+        </Sticker>
+        <Sticker variant="circle" color="green" rotate={10} className="absolute bottom-32 left-[8%] w-28 h-28 text-xs hidden md:grid z-20">
+          CAN'T<br/>TOUCH<br/>THIS.
+        </Sticker>
+
         <div className="container relative z-10 py-24 text-center">
-          <p className="font-mono text-yellow tracking-widest text-sm mb-6">MUSEUM OF LAUGHTER · ZAGREB</p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-balance leading-[0.9]">
-            A museum.<br />
-            <span className="text-yellow">But make it funny.</span>
-          </h1>
-          <p className="mt-8 text-xl md:text-2xl text-white/85 max-w-2xl mx-auto text-balance">
+          <p className="font-mono text-yellow tracking-[0.3em] text-xs mb-6 uppercase">Muzej Smijeha · Zagreb</p>
+
+          <img src={bubble} alt="HaHa House" className="mx-auto h-40 md:h-64 w-auto drop-shadow-[0_8px_0_rgba(0,0,0,0.15)]" />
+
+          <p className="mt-10 font-display text-3xl md:text-5xl text-white text-balance max-w-3xl mx-auto leading-tight">
+            A museum. <span className="text-yellow">But make it funny.</span>
+          </p>
+          <p className="mt-5 text-lg md:text-xl text-white/85 max-w-xl mx-auto text-balance">
             40+ exhibits. Scientifically unverified. Deeply necessary.
           </p>
 
-          <div className="mt-12">
+          <div className="mt-10">
             <Link
               to="/tickets"
-              className="group inline-flex items-center rounded-full bg-yellow text-navy font-bold px-10 py-5 text-lg transition-colors hover:bg-red hover:text-white"
+              className="group inline-flex items-center rounded-full bg-yellow text-navy font-bold px-10 py-5 text-lg transition-colors hover:bg-red hover:text-white shadow-[0_8px_0_rgba(0,0,0,0.18)]"
             >
               <span className="group-hover:hidden">BUY TICKETS</span>
               <span className="hidden group-hover:inline">fine.</span>
@@ -74,7 +85,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-6 z-10 flex items-center gap-3 text-white">
+        <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3 text-white">
           <span className="text-xs uppercase tracking-widest text-white/60 mr-2">we're there too</span>
           {[Instagram, Facebook, Youtube].map((Icon, i) => (
             <a key={i} href="#" className="opacity-80 hover:opacity-100 hover:text-yellow transition" aria-label="Social">
@@ -84,17 +95,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TICKER */}
+      <section className="bg-yellow text-navy py-4 overflow-hidden border-y-4 border-navy">
+        <div className="flex animate-ticker whitespace-nowrap font-display text-2xl md:text-3xl font-black">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <span key={i} className="px-6 flex items-center gap-6">
+              MUZEJ SMIJEHA <span className="text-red">★</span> HAHA HOUSE <span className="text-primary">★</span>
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* EXHIBITS */}
-      <section className="py-24 bg-white">
+      <section className="relative py-24 bg-white overflow-hidden">
         <div className="container">
           <p className="italic text-primary text-sm mb-3">actual photos. no filter needed.</p>
-          <h2 className="font-display text-5xl md:text-7xl text-navy">What's Inside</h2>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="font-display text-5xl md:text-7xl text-navy">What's Inside</h2>
+            <Sticker variant="arrow" color="turquoise" rotate={-4} className="text-base">
+              SCROLL →
+            </Sticker>
+          </div>
 
-          <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6 scrollbar-thin">
+          <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
             {exhibits.map((e, i) => (
               <div key={i} className="snap-start shrink-0 w-[80vw] md:w-[480px]">
-                <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-cool-gray">
-                  <img src={e.img} alt={e.label} loading="lazy" className="w-full h-full object-cover" />
+                <div className={`rounded-3xl overflow-hidden aspect-[4/3] ${e.color}`}>
+                  <img src={e.img} alt={e.label} loading="lazy" className="w-full h-full object-cover mix-blend-multiply" />
                 </div>
                 <p className="mt-4 font-display text-2xl text-navy">{e.label}</p>
               </div>
@@ -104,14 +131,24 @@ const Index = () => {
         </div>
       </section>
 
+      {/* COLLAGE STRIP — actual brand collage */}
+      <section className="relative py-0 overflow-hidden">
+        <img src={collage} alt="HaHa House moments" className="w-full h-auto block" />
+      </section>
+
       {/* OFFERS */}
-      <section className="py-24 bg-orange">
-        <div className="container">
+      <section className="relative py-24 bg-grad-sunset overflow-hidden">
+        <Doodles variant="wallpaper" tone="dark" />
+        <div className="container relative">
           <h2 className="font-display text-5xl md:text-7xl text-white text-center">Pick Your Poison</h2>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {offers.map((o) => (
-              <div key={o.title} className="bg-white rounded-3xl p-8 flex flex-col">
-                <span className="text-5xl">{o.emoji}</span>
+            {offers.map((o, i) => (
+              <div
+                key={o.title}
+                className={`${o.color} rounded-[2rem] p-8 flex flex-col shadow-[0_10px_0_rgba(0,0,0,0.18)] hover-wiggle`}
+                style={{ transform: `rotate(${i % 2 === 0 ? -1.5 : 1.5}deg)` }}
+              >
+                <span className="text-6xl">{o.emoji}</span>
                 <h3 className="mt-4 font-display text-3xl text-navy">{o.title}</h3>
                 <p className="mt-3 text-navy/80 flex-1">{o.desc}</p>
                 <Link to="/private-events" className="mt-6 font-bold text-primary hover:text-red transition-colors">
@@ -120,20 +157,21 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-white/90 italic">all of these live under Private Events. yes, that tab up there.</p>
+          <p className="mt-10 text-center text-white/90 italic">all of these live under Private Events. yes, that tab up there.</p>
         </div>
       </section>
 
       {/* EVENTS */}
-      <section className="py-24 bg-white">
-        <div className="container">
+      <section className="relative py-24 bg-white overflow-hidden">
+        <Doodles variant="scatter" />
+        <div className="container relative">
           <h2 className="font-display text-5xl md:text-7xl text-navy">What's On</h2>
           <p className="mt-3 text-muted-foreground italic">updated monthly. more reliable than your horoscope.</p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {events.map((e) => (
-              <article key={e.title} className="border-2 border-navy/10 rounded-3xl p-8 hover:border-primary transition-colors">
-                <span className="inline-block bg-turquoise text-navy font-bold px-3 py-1 rounded-md text-sm">{e.date}</span>
+              <article key={e.title} className="bg-white border-4 border-navy rounded-3xl p-8 hover:bg-yellow transition-colors shadow-[0_8px_0_hsl(var(--navy))]">
+                <span className="inline-block bg-red text-white font-bold px-3 py-1 rounded-md text-sm">{e.date}</span>
                 <h3 className="mt-5 font-display text-2xl text-primary">{e.title}</h3>
                 <p className="mt-2 text-navy/80">{e.desc}</p>
                 <button className="mt-6 rounded-full border-2 border-primary text-primary font-bold px-5 py-2 hover:bg-primary hover:text-white transition">
@@ -152,7 +190,7 @@ const Index = () => {
           <h2 className="font-display text-5xl md:text-7xl text-navy">We Exist in Real Life</h2>
 
           <div className="mt-12 grid gap-10 md:grid-cols-2">
-            <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-white">
+            <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-white border-4 border-navy">
               <iframe
                 title="HaHaHouse map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=15.974%2C45.810%2C15.984%2C45.815&layer=mapnik&marker=45.8125%2C15.979"
@@ -189,14 +227,19 @@ const Index = () => {
       </section>
 
       {/* REVIEWS */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container">
-          <h2 className="font-display text-5xl md:text-7xl text-balance max-w-3xl">Other People Came. They Left Happy.</h2>
-          <p className="mt-3 text-white/70 italic">we have proof.</p>
+      <section className="relative py-24 bg-grad-jungle text-navy overflow-hidden">
+        <Doodles variant="wallpaper" tone="dark" />
+        <div className="container relative">
+          <h2 className="font-display text-5xl md:text-7xl text-balance max-w-3xl text-navy">Other People Came. They Left Happy.</h2>
+          <p className="mt-3 text-navy/70 italic">we have proof.</p>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r) => (
-              <div key={r.name} className="bg-white rounded-3xl p-7 text-navy">
+            {reviews.map((r, i) => (
+              <div
+                key={r.name}
+                className="bg-white rounded-3xl p-7 text-navy shadow-[0_8px_0_hsl(var(--navy))]"
+                style={{ transform: `rotate(${i === 1 ? 1.5 : -1.5}deg)` }}
+              >
                 <div className="flex gap-1 text-yellow">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-yellow" />
@@ -207,7 +250,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-white/70 italic">reviews are real. we just can't stop reading them.</p>
         </div>
       </section>
 
