@@ -42,9 +42,8 @@ const Index = () => {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative bg-primary text-white overflow-hidden min-h-[92vh] flex items-center">
-        <Doodles variant="wallpaper" tone="dark" />
-
+      <section className="relative bg-cream text-navy overflow-hidden min-h-[92vh] flex items-center">
+        <Doodles variant="wallpaper" tone="cream" showFloaters={false} />
 
         {/* Sticker accents */}
         <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-36 h-36 text-sm hidden md:grid z-20">
@@ -55,33 +54,33 @@ const Index = () => {
         </Sticker>
 
         <div className="container relative z-10 py-24 text-center">
-          <p className="font-mono text-yellow tracking-[0.3em] text-xs mb-6 uppercase">World's First Museum of Laughter · Zagreb, Croatia</p>
+          <p className="font-mono text-navy/70 tracking-[0.3em] text-xs mb-6 uppercase">World's First Museum of Laughter · Zagreb, Croatia</p>
 
-          <img src={bubble} alt="HaHa House" className="mx-auto h-40 md:h-64 w-auto drop-shadow-[0_8px_0_rgba(0,0,0,0.15)]" />
+          <img src={bubble} alt="HaHa House" className="mx-auto h-40 md:h-64 w-auto drop-shadow-[0_8px_0_rgba(43,44,130,0.12)]" />
 
-          <p className="mt-10 font-display text-3xl md:text-5xl text-white text-balance max-w-3xl mx-auto leading-tight">
-            A museum. <span className="text-yellow">But make it funny.</span>
+          <p className="mt-10 font-display text-3xl md:text-5xl text-navy text-balance max-w-3xl mx-auto leading-tight">
+            A museum. <span className="text-red">But make it funny.</span>
           </p>
-          <p className="mt-5 text-lg md:text-xl text-white/85 max-w-xl mx-auto text-balance">
+          <p className="mt-5 text-lg md:text-xl text-navy/70 max-w-xl mx-auto text-balance">
             40+ exhibits. Scientifically unverified. Deeply necessary.
           </p>
 
           <div className="mt-10">
             <Link
               to="/tickets"
-              className="group inline-flex items-center rounded-full bg-yellow text-navy font-bold px-10 py-5 text-lg transition-colors hover:bg-red hover:text-white shadow-[0_8px_0_rgba(0,0,0,0.18)]"
+              className="group inline-flex items-center rounded-full bg-primary text-white font-bold px-10 py-5 text-lg transition-colors hover:bg-red shadow-[0_8px_0_rgba(43,44,130,0.18)]"
             >
               <span className="group-hover:hidden">BUY TICKETS</span>
               <span className="hidden group-hover:inline">fine.</span>
             </Link>
-            <p className="mt-4 text-sm text-white/70">starting from €9. cheaper than therapy.</p>
+            <p className="mt-4 text-sm text-navy/60">starting from €9. cheaper than therapy.</p>
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3 text-white">
-          <span className="text-xs uppercase tracking-widest text-white/60 mr-2">we're there too</span>
+        <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3 text-navy">
+          <span className="text-xs uppercase tracking-widest text-navy/60 mr-2">we're there too</span>
           {[Instagram, Facebook, Youtube].map((Icon, i) => (
-            <a key={i} href="#" className="opacity-80 hover:opacity-100 hover:text-yellow transition" aria-label="Social">
+            <a key={i} href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition" aria-label="Social">
               <Icon className="w-5 h-5" />
             </a>
           ))}
