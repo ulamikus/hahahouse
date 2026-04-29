@@ -5,7 +5,8 @@ import Doodles from "@/components/site/Doodles";
 import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
 import collage from "@/assets/brand-collage.jpg";
-import bubble from "@/assets/brand-logo-light.png";
+import bubble from "@/assets/haha-main-header.png";
+import heroDoodles from "@/assets/hero-doodles.png";
 import mrH from "@/assets/character-mrh.jpg";
 import exhibit1 from "@/assets/exhibit-1.jpg";
 import exhibit2 from "@/assets/exhibit-2.jpg";
@@ -42,8 +43,17 @@ const Index = () => {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative bg-cream text-navy overflow-hidden min-h-[92vh] flex items-center">
-        <Doodles variant="wallpaper" tone="cream" showFloaters={false} />
+      <section className="relative bg-cool-gray text-navy overflow-hidden min-h-[92vh] flex items-center">
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-30 mix-blend-multiply pointer-events-none"
+          style={{
+            backgroundImage: `url(${heroDoodles})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "grayscale(100%)",
+          }}
+        />
 
         {/* Sticker accents */}
         <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-36 h-36 text-sm hidden md:grid z-20">
