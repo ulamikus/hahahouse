@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
 import { Star, MapPin, Clock, Mail } from "lucide-react";
 import Layout from "@/components/site/Layout";
 import Doodles from "@/components/site/Doodles";
