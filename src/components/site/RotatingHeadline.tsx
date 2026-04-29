@@ -6,6 +6,10 @@ interface Props {
   hold?: number;
   /** ms for the fade in/out */
   fade?: number;
+  /** ms delay before the first message appears */
+  initialDelay?: number;
+  /** key that resets the sequence (e.g. video loop counter) */
+  resetKey?: number | string;
   className?: string;
 }
 
@@ -13,23 +17,43 @@ const RotatingHeadline = ({
   messages,
   hold = 3000,
   fade = 600,
+  initialDelay = 0,
+  resetKey,
   className = "",
 }: Props) => {
-  const [index, setIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [index, setIndex] = useState(-1); // -1 = nothing shown yet
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (messages.length <= 1) return;
-    const cycle = hold + fade;
-    const id = setInterval(() => {
-      setVisible(false);
-      window.setTimeout(() => {
-        setIndex((i) => (i + 1) % messages.length);
-        setVisible(true);
-      }, fade);
-    }, cycle);
-    return () => clearInterval(id);
-  }, [messages.length, hold, fade]);
+    setIndex(-1);
+    setVisible(false);
+    const timeouts: number[] = [];
+
+    // Show each message in sequence, then stop on the last one (or hide after).
+    let t = initialDelay;
+    messages.forEach((_, i) => {
+      timeouts.push(
+        window.setTimeout(() => {
+          setIndex(i);
+          setVisible(true);
+        }, t)
+      );
+      t += fade + hold;
+      // Fade out between messages, but NOT after the final one
+      if (i < messages.length - 1) {
+        timeouts.push(
+          window.setTimeout(() => {
+            setVisible(false);
+          }, t)
+        );
+        t += fade;
+      }
+    });
+
+    return () => {
+      timeouts.forEach((id) => clearTimeout(id));
+    };
+  }, [messages, hold, fade, initialDelay, resetKey]);
 
   return (
     <h1
@@ -39,7 +63,7 @@ const RotatingHeadline = ({
         transitionDuration: `${fade}ms`,
       }}
     >
-      {messages[index]}
+      {index >= 0 ? messages[index] : ""}
     </h1>
   );
 };
