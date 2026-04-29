@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
 import { Star, MapPin, Clock, Mail } from "lucide-react";
 import Layout from "@/components/site/Layout";
 import Doodles from "@/components/site/Doodles";
@@ -39,12 +40,15 @@ const reviews = [
 ];
 
 const Index = () => {
+  const [loopCount, setLoopCount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
   return (
     <Layout>
       {/* HERO — full-bleed walkthrough video, Color Factory style */}
       <section className="relative w-full h-[88vh] min-h-[560px] overflow-hidden bg-navy">
         {/* Video layer */}
         <video
+          ref={videoRef}
           aria-hidden
           autoPlay
           muted
@@ -52,6 +56,14 @@ const Index = () => {
           playsInline
           preload="auto"
           poster="/video/hero-poster.jpg"
+          onTimeUpdate={(e) => {
+            // Detect loop restart (time jumps back near 0)
+            const v = e.currentTarget;
+            if (v.currentTime < 0.3 && (v as any)._lastT > 1) {
+              setLoopCount((c) => c + 1);
+            }
+            (v as any)._lastT = v.currentTime;
+          }}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/video/hero-walkthrough.mp4" type="video/mp4" />
@@ -85,7 +97,9 @@ const Index = () => {
             ]}
             hold={3000}
             fade={600}
-            className="text-5xl md:text-7xl lg:text-8xl max-w-5xl"
+            initialDelay={800}
+            resetKey={loopCount}
+            className="text-4xl md:text-6xl lg:text-7xl max-w-5xl"
           />
         </div>
 
