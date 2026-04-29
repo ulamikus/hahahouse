@@ -5,7 +5,7 @@ import Doodles from "@/components/site/Doodles";
 import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
 import collage from "@/assets/brand-collage.jpg";
-import bubble from "@/assets/brand-logo-dark.png";
+import bubble from "@/assets/brand-logo-light.png";
 import mrH from "@/assets/character-mrh.jpg";
 import exhibit1 from "@/assets/exhibit-1.jpg";
 import exhibit2 from "@/assets/exhibit-2.jpg";
