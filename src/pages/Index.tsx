@@ -43,35 +43,31 @@ const Index = () => {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative bg-white text-navy overflow-hidden min-h-[92vh] flex items-center">
+      <section
+        className="relative bg-white text-navy overflow-hidden flex items-center w-full"
+        style={{ aspectRatio: "1376 / 768" }}
+      >
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: `url(${heroDoodles})`,
-            backgroundRepeat: "repeat",
+            backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            filter: "grayscale(100%) opacity(0.35)",
+            backgroundSize: "contain",
+            filter: "grayscale(100%) opacity(0.4)",
           }}
         />
 
-        {/* Sticker accents */}
-        <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-36 h-36 text-sm hidden md:grid z-20">
-          MUSEUM OF<br/>LAUGHTER
-        </Sticker>
-        <Sticker variant="circle" color="turquoise" rotate={10} className="absolute bottom-32 left-[8%] w-36 h-36 text-[11px] leading-tight hidden md:grid z-20">
-          <span className="block px-2">PLEASE<br/>DO TOUCH<br/>EVERYTHING.</span>
-        </Sticker>
-
-        <div className="container relative z-10 py-24 text-center">
-          <p className="font-mono text-navy/70 tracking-[0.3em] text-xs mb-6 uppercase">World's First Museum of Laughter · Zagreb, Croatia</p>
+        <div className="container relative z-10 text-center">
+          <p className="font-mono text-navy tracking-[0.3em] text-xs mb-6 uppercase font-bold">World's First Museum of Laughter · Zagreb, Croatia</p>
 
           <img src={bubble} alt="HaHa House" className="mx-auto h-64 md:h-[28rem] w-auto" />
 
           <p className="mt-10 font-display text-3xl md:text-5xl text-navy text-balance max-w-3xl mx-auto leading-tight">
             A museum. <span className="text-red">But make it funny.</span>
           </p>
-          <p className="mt-5 text-lg md:text-xl text-navy/70 max-w-xl mx-auto text-balance">
+          <p className="mt-5 text-lg md:text-xl text-navy max-w-xl mx-auto text-balance font-medium">
             40+ exhibits. Scientifically unverified. Deeply necessary.
           </p>
 
@@ -83,7 +79,7 @@ const Index = () => {
               <span className="group-hover:hidden">BUY TICKETS</span>
               <span className="hidden group-hover:inline">fine.</span>
             </Link>
-            <p className="mt-4 text-sm text-navy/60">starting from €9. cheaper than therapy.</p>
+            <p className="mt-4 text-sm text-navy font-medium">starting from €9. cheaper than therapy.</p>
           </div>
         </div>
 
