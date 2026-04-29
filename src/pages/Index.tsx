@@ -8,6 +8,7 @@ import TicketReminder from "@/components/site/TicketReminder";
 import RotatingHeadline from "@/components/site/RotatingHeadline";
 import collage from "@/assets/brand-collage.jpg";
 import roundLogo from "@/assets/haha-hero-logo.png";
+import hahaInterior from "@/assets/haha-interior.png";
 import exhibitSumo from "@/assets/exhibit-sumo.jpg";
 import exhibitLaundryWall from "@/assets/exhibit-laundry-wall.jpg";
 import exhibitWashers from "@/assets/exhibit-washers.jpg";
@@ -142,6 +143,30 @@ const Index = () => {
             ))}
           </div>
           <p className="mt-6 text-muted-foreground italic">yes it looks like this in real life.</p>
+        </div>
+      </section>
+
+      {/* WHAT IS — intro section */}
+      <section className="py-24 bg-white">
+        <div className="container grid gap-12 md:gap-16 md:grid-cols-2 items-center">
+          <div>
+            <p className="font-display text-primary text-3xl md:text-4xl mb-6">What is</p>
+            <img
+              src={roundLogo}
+              alt="HaHa House"
+              className="w-48 md:w-64 h-auto mb-8"
+            />
+            <p className="text-navy text-lg md:text-xl leading-relaxed">
+              A world's first museum of laughter where you actually have to participate. Not just look at things. Actually engage with them. Every room is designed to make you laugh. That's it. That's the whole concept. 40 exhibits built so you have no choice but to interact with them. Works for kids. Works for adults who remember how to have fun. Come laugh at something other than your life for a few hours.
+            </p>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <img
+              src={hahaInterior}
+              alt="Inside HaHa House"
+              className="w-full max-w-xl h-auto"
+            />
+          </div>
         </div>
       </section>
 
