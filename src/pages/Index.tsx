@@ -109,7 +109,7 @@ const Index = () => {
         {/* Tickets corner */}
         <Link
           to="/tickets"
-          className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20 inline-flex items-center rounded-full bg-yellow text-navy font-bold px-6 py-3 md:px-8 md:py-4 shadow-[0_8px_0_rgba(0,0,0,0.25)] hover:bg-red hover:text-white transition-colors"
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 md:bottom-20 z-20 inline-flex items-center rounded-full bg-yellow text-navy font-bold px-6 py-3 md:px-8 md:py-4 shadow-[0_8px_0_rgba(0,0,0,0.25)] hover:bg-red hover:text-white transition-colors"
         >
           BUY TICKETS
         </Link>
@@ -121,6 +121,30 @@ const Index = () => {
           Voted #1 best place to laugh in Zagreb · 2026
         </p>
       </div>
+
+      {/* WHAT IS — intro section */}
+      <section className="py-24 bg-white">
+        <div className="container grid gap-12 md:gap-16 md:grid-cols-2 md:items-stretch">
+          <div className="flex flex-col justify-center">
+            <p className="font-display text-primary text-3xl md:text-4xl mb-6">What is</p>
+            <img
+              src={hahaWordmark}
+              alt="HaHa House"
+              className="w-64 md:w-80 h-auto mb-8"
+            />
+            <p className="text-navy text-lg md:text-xl leading-relaxed">
+              A world's first museum of laughter where you actually have to participate. Not just look at things. Actually engage with them. Every room is designed to make you laugh. That's it. That's the whole concept. 40 exhibits built so you have no choice but to interact with them. Works for kids. Works for adults who remember how to have fun. Come laugh at something other than your life for a few hours.
+            </p>
+          </div>
+          <div className="h-full min-h-[320px]">
+            <img
+              src={hahaInterior}
+              alt="Inside HaHa House"
+              className="w-full h-full object-cover rounded-3xl"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* EXHIBITS */}
       <section className="relative py-24 bg-white overflow-hidden">
@@ -144,30 +168,6 @@ const Index = () => {
             ))}
           </div>
           <p className="mt-6 text-muted-foreground italic">yes it looks like this in real life.</p>
-        </div>
-      </section>
-
-      {/* WHAT IS — intro section */}
-      <section className="py-24 bg-white">
-        <div className="container grid gap-12 md:gap-16 md:grid-cols-2 md:items-stretch">
-          <div className="flex flex-col justify-center">
-            <p className="font-display text-primary text-3xl md:text-4xl mb-6">What is</p>
-            <img
-              src={hahaWordmark}
-              alt="HaHa House"
-              className="w-64 md:w-80 h-auto mb-8"
-            />
-            <p className="text-navy text-lg md:text-xl leading-relaxed">
-              A world's first museum of laughter where you actually have to participate. Not just look at things. Actually engage with them. Every room is designed to make you laugh. That's it. That's the whole concept. 40 exhibits built so you have no choice but to interact with them. Works for kids. Works for adults who remember how to have fun. Come laugh at something other than your life for a few hours.
-            </p>
-          </div>
-          <div className="h-full min-h-[320px]">
-            <img
-              src={hahaInterior}
-              alt="Inside HaHa House"
-              className="w-full h-full object-cover rounded-3xl"
-            />
-          </div>
         </div>
       </section>
 
