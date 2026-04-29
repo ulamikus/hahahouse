@@ -108,9 +108,20 @@
   .font-display { font-family: 'Fraunces', Georgia, serif; }
   .text-balance { text-wrap: balance; }
 
+  /* Brand gradients pulled from the HaHaHouse brand book */
+  .bg-grad-sunset {
+    background-image: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--red)) 60%, #c8348f 100%);
+  }
+  .bg-grad-jungle {
+    background-image: linear-gradient(135deg, hsl(var(--green)) 0%, hsl(var(--turquoise)) 50%, hsl(var(--primary)) 100%);
+  }
+  .bg-grad-electric {
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--red)) 100%);
+  }
+
   @keyframes float-slow {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-18px) rotate(4deg); }
+    0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-14px) rotate(calc(var(--rot, 0deg) + 3deg)); }
   }
   .animate-float { animation: float-slow 7s ease-in-out infinite; }
 
@@ -121,8 +132,14 @@
   .animate-ticker { animation: ticker 30s linear infinite; }
 
   @keyframes wiggle {
-    0%, 100% { transform: rotate(-2deg); }
-    50% { transform: rotate(2deg); }
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
   }
   .hover-wiggle:hover { animation: wiggle 0.4s ease-in-out infinite; }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow { animation: spin-slow 30s linear infinite; }
 }
