@@ -97,7 +97,9 @@ const Index = () => {
             ]}
             hold={3000}
             fade={600}
-            className="text-5xl md:text-7xl lg:text-8xl max-w-5xl"
+            initialDelay={800}
+            resetKey={loopCount}
+            className="text-4xl md:text-6xl lg:text-7xl max-w-5xl"
           />
         </div>
 
