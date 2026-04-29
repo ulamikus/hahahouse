@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Youtube } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/brand-logo-dark.png";
 
 const Footer = () => {
   return (
     <footer className="bg-navy text-white">
       <div className="container py-16 grid gap-12 md:grid-cols-3">
         <div>
-          <img src={logo} alt="HaHaHouse" className="h-14 w-auto bg-white rounded-xl p-2 inline-block" />
+          <img src={logo} alt="HaHaHouse" className="h-20 w-auto" />
           <p className="mt-6 font-display text-2xl leading-tight text-balance">
             Laughter is our currency.<br />
             <span className="opacity-70">(We also accept €.)</span>

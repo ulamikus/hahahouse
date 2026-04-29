@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import Layout from "@/components/site/Layout";
 import Doodles from "@/components/site/Doodles";
+import Sticker from "@/components/site/Sticker";
 import { toast } from "sonner";
 
 const infoBlocks = [
@@ -37,7 +38,10 @@ const PrivateEvents = () => {
   return (
     <Layout>
       <section className="relative bg-primary text-white overflow-hidden">
-        <Doodles />
+        <Doodles variant="wallpaper" tone="dark" />
+        <Sticker variant="circle" color="yellow" rotate={-10} className="absolute top-16 left-[6%] w-28 h-28 text-xs hidden md:grid z-10">
+          BOOK<br/>THE<br/>WHOLE<br/>HOUSE
+        </Sticker>
         <div className="container relative py-28 text-center">
           <h1 className="font-display text-5xl md:text-8xl text-balance">Let's Make It Weird. <br/><span className="text-yellow">In a Good Way.</span></h1>
           <p className="mt-6 text-xl text-white/85 max-w-2xl mx-auto text-balance">
