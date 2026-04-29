@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ShoppingBag, X, Plus, Minus } from "lucide-react";
 import Layout from "@/components/site/Layout";
+import Doodles from "@/components/site/Doodles";
+import Sticker from "@/components/site/Sticker";
 
 type Item = { id: string; name: string; price: number; qty: number };
 
@@ -41,7 +43,11 @@ const Shop = () => {
   return (
     <Layout>
       {/* HERO */}
-      <section className="bg-yellow">
+      <section className="relative bg-yellow overflow-hidden">
+        <Doodles variant="wallpaper" tone="light" />
+        <Sticker variant="starburst" color="red" rotate={-10} className="absolute top-10 left-[6%] w-28 h-28 text-xs hidden md:grid z-10">
+          GIFT<br/>WRAP<br/>FREE
+        </Sticker>
         <div className="container py-24 text-center relative">
           <h1 className="font-display text-6xl md:text-8xl text-navy text-balance">Take the Funny Home.</h1>
           <p className="mt-6 text-navy/80 text-xl max-w-2xl mx-auto">
@@ -49,7 +55,7 @@ const Shop = () => {
           </p>
           <button
             onClick={() => setOpen(true)}
-            className="absolute top-6 right-6 rounded-full bg-navy text-white px-5 py-3 font-bold flex items-center gap-2"
+            className="absolute top-6 right-6 rounded-full bg-navy text-white px-5 py-3 font-bold flex items-center gap-2 z-20"
           >
             <ShoppingBag className="w-5 h-5" /> {cart.reduce((a, i) => a + i.qty, 0)}
           </button>
