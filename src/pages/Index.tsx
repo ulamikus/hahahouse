@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Youtube, Star, MapPin, Clock, Mail } from "lucide-react";
+import { Star, MapPin, Clock, Mail } from "lucide-react";
 import Layout from "@/components/site/Layout";
 import Doodles from "@/components/site/Doodles";
 import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
+import RotatingHeadline from "@/components/site/RotatingHeadline";
 import collage from "@/assets/brand-collage.jpg";
-import bubble from "@/assets/haha-main-header.png";
-import heroDoodles from "@/assets/hero-doodles.png";
-import mrH from "@/assets/character-mrh.jpg";
+import roundLogo from "@/assets/brand-logo.jpg";
 import exhibit1 from "@/assets/exhibit-1.jpg";
 import exhibit2 from "@/assets/exhibit-2.jpg";
 import exhibit3 from "@/assets/exhibit-3.jpg";
@@ -42,56 +41,69 @@ const reviews = [
 const Index = () => {
   return (
     <Layout>
-      {/* HERO */}
-      <section
-        className="relative bg-white text-navy overflow-hidden flex items-center w-full"
-        style={{ aspectRatio: "1376 / 768" }}
-      >
+      {/* HERO — full-bleed walkthrough video, Color Factory style */}
+      <section className="relative w-full h-[88vh] min-h-[560px] overflow-hidden bg-navy">
+        {/* Video layer */}
+        <video
+          aria-hidden
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/video/hero-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video/hero-walkthrough.mp4" type="video/mp4" />
+        </video>
+
+        {/* Gradient overlay for text legibility */}
         <div
           aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `url(${heroDoodles})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "contain",
-            filter: "grayscale(100%) opacity(0.4)",
-          }}
+          className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/50 pointer-events-none"
         />
 
-        <div className="container relative z-10 text-center">
-          <p className="font-mono text-navy tracking-[0.3em] text-xs mb-6 uppercase font-bold">World's First Museum of Laughter · Zagreb, Croatia</p>
+        {/* Round logo, top-left */}
+        <Link
+          to="/"
+          aria-label="HaHa House home"
+          className="absolute top-5 left-5 md:top-7 md:left-7 z-20"
+        >
+          <img
+            src={roundLogo}
+            alt="HaHa House"
+            className="h-[72px] w-[72px] md:h-[110px] md:w-[110px] rounded-full object-cover shadow-[0_6px_24px_rgba(0,0,0,0.35)] ring-2 ring-white/80"
+          />
+        </Link>
 
-          <img src={bubble} alt="HaHa House" className="mx-auto h-64 md:h-[28rem] w-auto" />
-
-          <p className="mt-10 font-display text-3xl md:text-5xl text-navy text-balance max-w-3xl mx-auto leading-tight">
-            A museum. <span className="text-red">But make it funny.</span>
-          </p>
-          <p className="mt-5 text-lg md:text-xl text-navy max-w-xl mx-auto text-balance font-medium">
-            40+ exhibits. Scientifically unverified. Deeply necessary.
-          </p>
-
-          <div className="mt-10">
-            <Link
-              to="/tickets"
-              className="group inline-flex items-center rounded-full bg-primary text-white font-bold px-10 py-5 text-lg transition-colors hover:bg-red shadow-[0_8px_0_rgba(43,44,130,0.18)]"
-            >
-              <span className="group-hover:hidden">BUY TICKETS</span>
-              <span className="hidden group-hover:inline">fine.</span>
-            </Link>
-            <p className="mt-4 text-sm text-navy font-medium">starting from €9. cheaper than therapy.</p>
-          </div>
+        {/* Rotating headline */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-6 pointer-events-none">
+          <RotatingHeadline
+            messages={[
+              "LIKE A MUSEUM. BUT FUNNY.",
+              "40+ EXHIBITS DESIGNED TO MAKE YOU LAUGH.",
+            ]}
+            hold={3000}
+            fade={600}
+            className="text-5xl md:text-7xl lg:text-8xl max-w-5xl"
+          />
         </div>
 
-        <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3 text-navy">
-          <span className="text-xs uppercase tracking-widest text-navy/60 mr-2">we're there too</span>
-          {[Instagram, Facebook, Youtube].map((Icon, i) => (
-            <a key={i} href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition" aria-label="Social">
-              <Icon className="w-5 h-5" />
-            </a>
-          ))}
-        </div>
+        {/* Tickets corner */}
+        <Link
+          to="/tickets"
+          className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20 inline-flex items-center rounded-full bg-yellow text-navy font-bold px-6 py-3 md:px-8 md:py-4 shadow-[0_8px_0_rgba(0,0,0,0.25)] hover:bg-red hover:text-white transition-colors"
+        >
+          BUY TICKETS
+        </Link>
       </section>
+
+      {/* Sub-hero strip */}
+      <div className="bg-white border-b border-navy/10">
+        <p className="container py-4 text-center font-mono uppercase tracking-[0.25em] text-xs md:text-sm text-navy font-bold">
+          Voted #1 best place to laugh in Zagreb · 2026
+        </p>
+      </div>
 
       {/* EXHIBITS */}
       <section className="relative py-24 bg-white overflow-hidden">
