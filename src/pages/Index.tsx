@@ -238,27 +238,27 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <div className="md:col-span-2 grid gap-5">
-              <div className="bg-yellow rounded-3xl p-7">
+            <div className="md:col-span-2 grid gap-8 content-center">
+              <div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-6 h-6 text-navy shrink-0" />
+                  <Clock className="w-6 h-6 text-primary shrink-0" />
                   <p className="font-display text-2xl text-navy">Hours</p>
                 </div>
                 <p className="mt-2 text-navy/80">09:00–21:00 — yes, every day</p>
               </div>
-              <div className="bg-turquoise rounded-3xl p-7">
+              <div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="w-6 h-6 text-navy shrink-0" />
+                  <MapPin className="w-6 h-6 text-primary shrink-0" />
                   <p className="font-display text-2xl text-navy">Address</p>
                 </div>
                 <p className="mt-2 text-navy/80">Gajeva 7/1, Zagreb</p>
               </div>
-              <div className="bg-orange rounded-3xl p-7">
+              <div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-6 h-6 text-white shrink-0" />
-                  <p className="font-display text-2xl text-white">Email</p>
+                  <Mail className="w-6 h-6 text-primary shrink-0" />
+                  <p className="font-display text-2xl text-navy">Email</p>
                 </div>
-                <a className="mt-2 block text-white/90 hover:text-navy" href="mailto:info@haha.house">
+                <a className="mt-2 block text-navy/80 hover:text-primary" href="mailto:info@haha.house">
                   info@haha.house
                 </a>
               </div>
