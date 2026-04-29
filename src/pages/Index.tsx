@@ -195,35 +195,48 @@ const Index = () => {
       </section>
 
       {/* EVENTS */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <Doodles variant="scatter" />
-        <div className="container relative">
-          <h2 className="font-display text-5xl md:text-7xl text-navy">What's On</h2>
-          <p className="mt-3 text-muted-foreground italic">updated monthly. more reliable than your horoscope.</p>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {events.map((e) => (
-              <article key={e.title} className="bg-white border-4 border-navy rounded-3xl p-8 hover:bg-yellow transition-colors shadow-[0_8px_0_hsl(var(--navy))]">
-                <span className="inline-block bg-red text-white font-bold px-3 py-1 rounded-md text-sm">{e.date}</span>
-                <h3 className="mt-5 font-display text-2xl text-primary">{e.title}</h3>
-                <p className="mt-2 text-navy/80">{e.desc}</p>
-                <button className="mt-6 rounded-full border-2 border-primary text-primary font-bold px-5 py-2 hover:bg-primary hover:text-white transition">
-                  Reserve
-                </button>
-              </article>
-            ))}
+      <section className="relative py-24 bg-white">
+        <div className="container">
+          <p className="italic text-primary text-sm mb-3">updated monthly. more reliable than your horoscope.</p>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="font-display text-5xl md:text-7xl text-navy">What's On</h2>
+            <Sticker variant="pill" color="red" rotate={3} className="text-sm">
+              BOOK AHEAD
+            </Sticker>
           </div>
-          <p className="mt-8 text-muted-foreground italic">can't make it? we'll survive. probably.</p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {events.map((e, i) => {
+              const accents = ["bg-yellow", "bg-turquoise", "bg-orange"];
+              return (
+                <article
+                  key={e.title}
+                  className={`${accents[i % 3]} rounded-[2rem] p-8 flex flex-col`}
+                >
+                  <span className="inline-block bg-navy text-white font-bold px-3 py-1 rounded-md text-sm font-mono tracking-wider">
+                    {e.date}
+                  </span>
+                  <h3 className="mt-5 font-display text-3xl text-navy">{e.title}</h3>
+                  <p className="mt-3 text-navy/80 flex-1">{e.desc}</p>
+                  <button className="mt-6 self-start font-bold text-navy hover:text-primary transition-colors">
+                    Reserve →
+                  </button>
+                </article>
+              );
+            })}
+          </div>
+          <p className="mt-10 text-center text-navy/60 italic">can't make it? we'll survive. probably.</p>
         </div>
       </section>
 
       {/* LOCATION */}
-      <section className="py-24 bg-cool-gray">
+      <section className="py-24 bg-white">
         <div className="container">
+          <p className="italic text-primary text-sm mb-3">yes, we have an actual address.</p>
           <h2 className="font-display text-5xl md:text-7xl text-navy">We Exist in Real Life</h2>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-2">
-            <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-white border-4 border-navy">
+          <div className="mt-12 grid gap-8 md:grid-cols-5 md:items-stretch">
+            <div className="md:col-span-3 rounded-3xl overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[420px]">
               <iframe
                 title="HaHaHouse map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=15.974%2C45.810%2C15.984%2C45.815&layer=mapnik&marker=45.8125%2C15.979"
@@ -231,58 +244,71 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <Clock className="w-6 h-6 text-primary shrink-0 mt-1" />
-                <div>
+            <div className="md:col-span-2 grid gap-5">
+              <div className="bg-yellow rounded-3xl p-7">
+                <div className="flex items-center gap-3">
+                  <Clock className="w-6 h-6 text-navy shrink-0" />
                   <p className="font-display text-2xl text-navy">Hours</p>
-                  <p className="text-navy/80">09:00–21:00 — yes, every day</p>
                 </div>
+                <p className="mt-2 text-navy/80">09:00–21:00 — yes, every day</p>
               </div>
-              <div className="flex gap-4">
-                <MapPin className="w-6 h-6 text-primary shrink-0 mt-1" />
-                <div>
+              <div className="bg-turquoise rounded-3xl p-7">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-6 h-6 text-navy shrink-0" />
                   <p className="font-display text-2xl text-navy">Address</p>
-                  <p className="text-navy/80">Gajeva 7/1, Zagreb</p>
                 </div>
+                <p className="mt-2 text-navy/80">Gajeva 7/1, Zagreb</p>
               </div>
-              <div className="flex gap-4">
-                <Mail className="w-6 h-6 text-primary shrink-0 mt-1" />
-                <div>
-                  <p className="font-display text-2xl text-navy">Email</p>
-                  <a className="text-navy/80 hover:text-primary" href="mailto:info@haha.house">info@haha.house</a>
+              <div className="bg-orange rounded-3xl p-7">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-6 h-6 text-white shrink-0" />
+                  <p className="font-display text-2xl text-white">Email</p>
                 </div>
+                <a className="mt-2 block text-white/90 hover:text-navy" href="mailto:info@haha.house">
+                  info@haha.house
+                </a>
               </div>
-              <p className="italic text-navy/60">easier to find than you think.</p>
             </div>
           </div>
+          <p className="mt-8 text-center text-navy/60 italic">easier to find than you think.</p>
         </div>
       </section>
 
       {/* REVIEWS */}
-      <section className="relative py-24 bg-grad-jungle text-navy overflow-hidden">
-        <Doodles variant="wallpaper" tone="dark" />
-        <div className="container relative">
-          <h2 className="font-display text-5xl md:text-7xl text-balance max-w-3xl text-navy">Other People Came. They Left Happy.</h2>
-          <p className="mt-3 text-navy/70 italic">we have proof.</p>
+      <section className="relative py-24 bg-white">
+        <div className="container">
+          <p className="italic text-primary text-sm mb-3">don't take our word for it.</p>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="font-display text-5xl md:text-7xl text-navy text-balance max-w-3xl">
+              Other People Came. They Left Happy.
+            </h2>
+            <Sticker variant="starburst" color="red" rotate={-8} className="w-28 h-28 text-sm">
+              5 STARS
+            </Sticker>
+          </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r, i) => (
-              <div
-                key={r.name}
-                className="bg-white rounded-3xl p-7 text-navy shadow-[0_8px_0_hsl(var(--navy))]"
-                style={{ transform: `rotate(${i === 1 ? 1.5 : -1.5}deg)` }}
-              >
-                <div className="flex gap-1 text-yellow">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow" />
-                  ))}
+            {reviews.map((r, i) => {
+              const tones = ["bg-yellow", "bg-turquoise", "bg-green"];
+              return (
+                <div
+                  key={r.name}
+                  className={`${tones[i % 3]} rounded-[2rem] p-8 flex flex-col`}
+                >
+                  <div className="flex gap-1 text-red">
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                      <Star key={idx} className="w-5 h-5 fill-red" />
+                    ))}
+                  </div>
+                  <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
+                    "{r.quote}"
+                  </p>
+                  <p className="mt-6 font-bold text-navy">— {r.name}</p>
                 </div>
-                <p className="mt-4 font-display text-xl leading-snug">"{r.quote}"</p>
-                <p className="mt-4 font-bold">— {r.name}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
+          <p className="mt-10 text-center text-navy/60 italic">we didn't pay them. probably.</p>
         </div>
       </section>
 
