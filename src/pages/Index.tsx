@@ -281,26 +281,20 @@ const Index = () => {
             </Sticker>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r, i) => {
-              const tones = ["bg-yellow", "bg-turquoise", "bg-green"];
-              return (
-                <div
-                  key={r.name}
-                  className={`${tones[i % 3]} rounded-[2rem] p-8 flex flex-col`}
-                >
-                  <div className="flex gap-1 text-red">
-                    {Array.from({ length: 5 }).map((_, idx) => (
-                      <Star key={idx} className="w-5 h-5 fill-red" />
-                    ))}
-                  </div>
-                  <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
-                    "{r.quote}"
-                  </p>
-                  <p className="mt-6 font-bold text-navy">— {r.name}</p>
+          <div className="mt-12 grid gap-10 md:grid-cols-3">
+            {reviews.map((r) => (
+              <div key={r.name} className="flex flex-col">
+                <div className="flex gap-1 text-red">
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <Star key={idx} className="w-5 h-5 fill-red" />
+                  ))}
                 </div>
-              );
-            })}
+                <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
+                  "{r.quote}"
+                </p>
+                <p className="mt-6 font-bold text-navy">— {r.name}</p>
+              </div>
+            ))}
           </div>
           <p className="mt-10 text-center text-navy/60 italic">we didn't pay them. probably.</p>
         </div>
