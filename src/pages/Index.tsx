@@ -47,15 +47,15 @@ const Index = () => {
 
 
         {/* Sticker accents */}
-        <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-32 h-32 text-sm hidden md:grid z-20">
-          MUZEJ<br/>SMIJEHA
+        <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-36 h-36 text-sm hidden md:grid z-20">
+          MUSEUM OF<br/>LAUGHTER
         </Sticker>
-        <Sticker variant="circle" color="green" rotate={10} className="absolute bottom-32 left-[8%] w-28 h-28 text-xs hidden md:grid z-20">
-          CAN'T<br/>TOUCH<br/>THIS.
+        <Sticker variant="circle" color="turquoise" rotate={10} className="absolute bottom-32 left-[8%] w-32 h-32 text-xs hidden md:grid z-20">
+          PLEASE<br/>DO TOUCH<br/>EVERYTHING.
         </Sticker>
 
         <div className="container relative z-10 py-24 text-center">
-          <p className="font-mono text-yellow tracking-[0.3em] text-xs mb-6 uppercase">Muzej Smijeha · Zagreb</p>
+          <p className="font-mono text-yellow tracking-[0.3em] text-xs mb-6 uppercase">World's First Museum of Laughter · Zagreb, Croatia</p>
 
           <img src={bubble} alt="HaHa House" className="mx-auto h-40 md:h-64 w-auto drop-shadow-[0_8px_0_rgba(0,0,0,0.15)]" />
 
