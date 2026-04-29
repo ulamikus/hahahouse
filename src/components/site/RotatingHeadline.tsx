@@ -39,15 +39,13 @@ const RotatingHeadline = ({
         }, t)
       );
       t += fade + hold;
-      // Fade out between messages, but NOT after the final one
-      if (i < messages.length - 1) {
-        timeouts.push(
-          window.setTimeout(() => {
-            setVisible(false);
-          }, t)
-        );
-        t += fade;
-      }
+      // Always fade out after each message (including the last one)
+      timeouts.push(
+        window.setTimeout(() => {
+          setVisible(false);
+        }, t)
+      );
+      t += fade;
     });
 
     return () => {
