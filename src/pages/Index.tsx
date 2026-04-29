@@ -8,17 +8,18 @@ import TicketReminder from "@/components/site/TicketReminder";
 import RotatingHeadline from "@/components/site/RotatingHeadline";
 import collage from "@/assets/brand-collage.jpg";
 import roundLogo from "@/assets/haha-hero-logo.png";
-import exhibit1 from "@/assets/exhibit-1.jpg";
-import exhibit2 from "@/assets/exhibit-2.jpg";
-import exhibit3 from "@/assets/exhibit-3.jpg";
-import exhibit4 from "@/assets/exhibit-4.jpg";
+import exhibitSumo from "@/assets/exhibit-sumo.jpg";
+import exhibitLaundryWall from "@/assets/exhibit-laundry-wall.jpg";
+import exhibitWashers from "@/assets/exhibit-washers.jpg";
+import exhibitBallpit from "@/assets/exhibit-ballpit.jpg";
+import exhibitWheel from "@/assets/exhibit-wheel.jpg";
 
 const exhibits = [
-  { img: exhibit1, label: "Neon Hall", color: "bg-yellow" },
-  { img: exhibit2, label: "Inflatable Room", color: "bg-red" },
-  { img: exhibit3, label: "Mirror Maze", color: "bg-turquoise" },
-  { img: exhibit4, label: "The Tunnel", color: "bg-orange" },
-  { img: exhibit1, label: "More Stuff", color: "bg-green" },
+  { img: exhibitSumo, label: "Sumo Smackdown", color: "bg-yellow" },
+  { img: exhibitLaundryWall, label: "Laundry Rules", color: "bg-orange" },
+  { img: exhibitWashers, label: "Spin Cycle", color: "bg-red" },
+  { img: exhibitBallpit, label: "Ball Pit Abyss", color: "bg-turquoise" },
+  { img: exhibitWheel, label: "Wheel of Life", color: "bg-green" },
 ];
 
 const offers = [
