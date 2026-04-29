@@ -151,27 +151,25 @@ const Index = () => {
       </section>
 
       {/* OFFERS */}
-      <section className="relative py-24 bg-grad-sunset overflow-hidden">
-        <Doodles variant="wallpaper" tone="dark" />
-        <div className="container relative">
-          <h2 className="font-display text-5xl md:text-7xl text-white text-center">Pick Your Poison</h2>
+      <section className="relative py-24 bg-white">
+        <div className="container">
+          <h2 className="font-display text-5xl md:text-7xl text-navy text-center">Pick Your Poison</h2>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {offers.map((o, i) => (
+            {offers.map((o) => (
               <div
                 key={o.title}
-                className={`${o.color} rounded-[2rem] p-8 flex flex-col shadow-[0_10px_0_rgba(0,0,0,0.18)] hover-wiggle`}
-                style={{ transform: `rotate(${i % 2 === 0 ? -1.5 : 1.5}deg)` }}
+                className={`${o.color} rounded-[2rem] p-8 flex flex-col`}
               >
                 <span className="text-6xl">{o.emoji}</span>
                 <h3 className="mt-4 font-display text-3xl text-navy">{o.title}</h3>
                 <p className="mt-3 text-navy/80 flex-1">{o.desc}</p>
-                <Link to="/private-events" className="mt-6 font-bold text-primary hover:text-red transition-colors">
+                <Link to="/private-events" className="mt-6 font-bold text-navy hover:text-primary transition-colors">
                   See More →
                 </Link>
               </div>
             ))}
           </div>
-          <p className="mt-10 text-center text-white/90 italic">all of these live under Private Events. yes, that tab up there.</p>
+          <p className="mt-10 text-center text-navy/60 italic">all of these live under Private Events.</p>
         </div>
       </section>
 
