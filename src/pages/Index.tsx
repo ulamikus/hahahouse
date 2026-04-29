@@ -135,7 +135,7 @@ const Index = () => {
             {exhibits.map((e, i) => (
               <div key={i} className="snap-start shrink-0 w-[80vw] md:w-[480px]">
                 <div className={`rounded-3xl overflow-hidden aspect-[4/3] ${e.color}`}>
-                  <img src={e.img} alt={e.label} loading="lazy" className="w-full h-full object-cover mix-blend-multiply" />
+                  <img src={e.img} alt={e.label} loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <p className="mt-4 font-display text-2xl text-navy">{e.label}</p>
               </div>
