@@ -205,25 +205,19 @@ const Index = () => {
             </Sticker>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {events.map((e, i) => {
-              const accents = ["bg-yellow", "bg-turquoise", "bg-orange"];
-              return (
-                <article
-                  key={e.title}
-                  className={`${accents[i % 3]} rounded-[2rem] p-8 flex flex-col`}
-                >
-                  <span className="inline-block bg-navy text-white font-bold px-3 py-1 rounded-md text-sm font-mono tracking-wider">
-                    {e.date}
-                  </span>
-                  <h3 className="mt-5 font-display text-3xl text-navy">{e.title}</h3>
-                  <p className="mt-3 text-navy/80 flex-1">{e.desc}</p>
-                  <button className="mt-6 self-start font-bold text-navy hover:text-primary transition-colors">
-                    Reserve →
-                  </button>
-                </article>
-              );
-            })}
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {events.map((e) => (
+              <article key={e.title} className="flex flex-col border-t-4 border-navy pt-6">
+                <span className="inline-block self-start bg-navy text-white font-bold px-3 py-1 rounded-md text-sm font-mono tracking-wider">
+                  {e.date}
+                </span>
+                <h3 className="mt-5 font-display text-3xl text-navy">{e.title}</h3>
+                <p className="mt-3 text-navy/80 flex-1">{e.desc}</p>
+                <button className="mt-6 self-start font-bold text-primary hover:text-navy transition-colors">
+                  Reserve →
+                </button>
+              </article>
+            ))}
           </div>
           <p className="mt-10 text-center text-navy/60 italic">can't make it? we'll survive. probably.</p>
         </div>
