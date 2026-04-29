@@ -205,25 +205,19 @@ const Index = () => {
             </Sticker>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {events.map((e, i) => {
-              const accents = ["bg-yellow", "bg-turquoise", "bg-orange"];
-              return (
-                <article
-                  key={e.title}
-                  className={`${accents[i % 3]} rounded-[2rem] p-8 flex flex-col`}
-                >
-                  <span className="inline-block bg-navy text-white font-bold px-3 py-1 rounded-md text-sm font-mono tracking-wider">
-                    {e.date}
-                  </span>
-                  <h3 className="mt-5 font-display text-3xl text-navy">{e.title}</h3>
-                  <p className="mt-3 text-navy/80 flex-1">{e.desc}</p>
-                  <button className="mt-6 self-start font-bold text-navy hover:text-primary transition-colors">
-                    Reserve →
-                  </button>
-                </article>
-              );
-            })}
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {events.map((e) => (
+              <article key={e.title} className="flex flex-col border-t-4 border-navy pt-6">
+                <span className="inline-block self-start bg-navy text-white font-bold px-3 py-1 rounded-md text-sm font-mono tracking-wider">
+                  {e.date}
+                </span>
+                <h3 className="mt-5 font-display text-3xl text-navy">{e.title}</h3>
+                <p className="mt-3 text-navy/80 flex-1">{e.desc}</p>
+                <button className="mt-6 self-start font-bold text-primary hover:text-navy transition-colors">
+                  Reserve →
+                </button>
+              </article>
+            ))}
           </div>
           <p className="mt-10 text-center text-navy/60 italic">can't make it? we'll survive. probably.</p>
         </div>
@@ -244,27 +238,27 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <div className="md:col-span-2 grid gap-5">
-              <div className="bg-yellow rounded-3xl p-7">
+            <div className="md:col-span-2 grid gap-8 content-center">
+              <div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-6 h-6 text-navy shrink-0" />
+                  <Clock className="w-6 h-6 text-primary shrink-0" />
                   <p className="font-display text-2xl text-navy">Hours</p>
                 </div>
                 <p className="mt-2 text-navy/80">09:00–21:00 — yes, every day</p>
               </div>
-              <div className="bg-turquoise rounded-3xl p-7">
+              <div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="w-6 h-6 text-navy shrink-0" />
+                  <MapPin className="w-6 h-6 text-primary shrink-0" />
                   <p className="font-display text-2xl text-navy">Address</p>
                 </div>
                 <p className="mt-2 text-navy/80">Gajeva 7/1, Zagreb</p>
               </div>
-              <div className="bg-orange rounded-3xl p-7">
+              <div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-6 h-6 text-white shrink-0" />
-                  <p className="font-display text-2xl text-white">Email</p>
+                  <Mail className="w-6 h-6 text-primary shrink-0" />
+                  <p className="font-display text-2xl text-navy">Email</p>
                 </div>
-                <a className="mt-2 block text-white/90 hover:text-navy" href="mailto:info@haha.house">
+                <a className="mt-2 block text-navy/80 hover:text-primary" href="mailto:info@haha.house">
                   info@haha.house
                 </a>
               </div>
@@ -287,26 +281,20 @@ const Index = () => {
             </Sticker>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r, i) => {
-              const tones = ["bg-yellow", "bg-turquoise", "bg-green"];
-              return (
-                <div
-                  key={r.name}
-                  className={`${tones[i % 3]} rounded-[2rem] p-8 flex flex-col`}
-                >
-                  <div className="flex gap-1 text-red">
-                    {Array.from({ length: 5 }).map((_, idx) => (
-                      <Star key={idx} className="w-5 h-5 fill-red" />
-                    ))}
-                  </div>
-                  <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
-                    "{r.quote}"
-                  </p>
-                  <p className="mt-6 font-bold text-navy">— {r.name}</p>
+          <div className="mt-12 grid gap-10 md:grid-cols-3">
+            {reviews.map((r) => (
+              <div key={r.name} className="flex flex-col">
+                <div className="flex gap-1 text-red">
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <Star key={idx} className="w-5 h-5 fill-red" />
+                  ))}
                 </div>
-              );
-            })}
+                <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
+                  "{r.quote}"
+                </p>
+                <p className="mt-6 font-bold text-navy">— {r.name}</p>
+              </div>
+            ))}
           </div>
           <p className="mt-10 text-center text-navy/60 italic">we didn't pay them. probably.</p>
         </div>
