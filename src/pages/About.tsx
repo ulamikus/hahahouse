@@ -117,15 +117,6 @@ const About = () => (
       </div>
     </section>
 
-    {/* TICKER */}
-    <section className="bg-primary text-white py-6 overflow-hidden">
-      <div className="flex animate-ticker whitespace-nowrap font-display text-4xl">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <span key={i} className="px-8">ok, you need to see this ·</span>
-        ))}
-      </div>
-    </section>
-
     {/* ANDREA */}
     <section className="py-24 bg-white">
       <div className="container grid gap-12 md:grid-cols-2 items-center">

@@ -45,13 +45,6 @@ const Index = () => {
       <section className="relative bg-primary text-white overflow-hidden min-h-[92vh] flex items-center">
         <Doodles variant="wallpaper" tone="dark" />
 
-        {/* Mr.H peeking from the right */}
-        <img
-          src={mrH}
-          alt=""
-          aria-hidden
-          className="hidden lg:block absolute -right-12 bottom-0 w-[420px] z-10 select-none pointer-events-none"
-        />
 
         {/* Sticker accents */}
         <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-32 h-32 text-sm hidden md:grid z-20">
@@ -91,17 +84,6 @@ const Index = () => {
             <a key={i} href="#" className="opacity-80 hover:opacity-100 hover:text-yellow transition" aria-label="Social">
               <Icon className="w-5 h-5" />
             </a>
-          ))}
-        </div>
-      </section>
-
-      {/* TICKER */}
-      <section className="bg-yellow text-navy py-4 overflow-hidden border-y-4 border-navy">
-        <div className="flex animate-ticker whitespace-nowrap font-display text-2xl md:text-3xl font-black">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="px-6 flex items-center gap-6">
-              MUZEJ SMIJEHA <span className="text-red">★</span> HAHA HOUSE <span className="text-primary">★</span>
-            </span>
           ))}
         </div>
       </section>
