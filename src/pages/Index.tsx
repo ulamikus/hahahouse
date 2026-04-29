@@ -95,7 +95,7 @@ const Index = () => {
               "LIKE A MUSEUM. BUT FUNNY.",
               "40+ EXHIBITS DESIGNED TO MAKE YOU LAUGH.",
             ]}
-            hold={3000}
+            hold={5000}
             fade={600}
             initialDelay={800}
             resetKey={loopCount}
