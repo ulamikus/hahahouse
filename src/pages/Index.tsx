@@ -171,11 +171,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* COLLAGE STRIP — actual brand collage */}
-      <section className="relative py-0 overflow-hidden">
-        <img src={collage} alt="HaHa House moments" className="w-full h-auto block" />
-      </section>
-
       {/* OFFERS */}
       <section className="relative py-24 bg-white">
         <div className="container">
