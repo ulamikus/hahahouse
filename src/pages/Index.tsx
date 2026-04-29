@@ -43,15 +43,15 @@ const Index = () => {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative bg-cool-gray text-navy overflow-hidden min-h-[92vh] flex items-center">
+      <section className="relative bg-white text-navy overflow-hidden min-h-[92vh] flex items-center">
         <div
           aria-hidden
-          className="absolute inset-0 opacity-30 mix-blend-multiply pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: `url(${heroDoodles})`,
-            backgroundSize: "cover",
+            backgroundRepeat: "repeat",
             backgroundPosition: "center",
-            filter: "grayscale(100%)",
+            filter: "grayscale(100%) opacity(0.35)",
           }}
         />
 
@@ -66,7 +66,7 @@ const Index = () => {
         <div className="container relative z-10 py-24 text-center">
           <p className="font-mono text-navy/70 tracking-[0.3em] text-xs mb-6 uppercase">World's First Museum of Laughter · Zagreb, Croatia</p>
 
-          <img src={bubble} alt="HaHa House" className="mx-auto h-40 md:h-64 w-auto drop-shadow-[0_8px_0_rgba(43,44,130,0.12)]" />
+          <img src={bubble} alt="HaHa House" className="mx-auto h-64 md:h-[28rem] w-auto" />
 
           <p className="mt-10 font-display text-3xl md:text-5xl text-navy text-balance max-w-3xl mx-auto leading-tight">
             A museum. <span className="text-red">But make it funny.</span>
