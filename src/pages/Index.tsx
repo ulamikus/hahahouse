@@ -48,6 +48,7 @@ const Index = () => {
       <section className="relative w-full h-[88vh] min-h-[560px] overflow-hidden bg-navy">
         {/* Video layer */}
         <video
+          ref={videoRef}
           aria-hidden
           autoPlay
           muted
@@ -55,6 +56,14 @@ const Index = () => {
           playsInline
           preload="auto"
           poster="/video/hero-poster.jpg"
+          onTimeUpdate={(e) => {
+            // Detect loop restart (time jumps back near 0)
+            const v = e.currentTarget;
+            if (v.currentTime < 0.3 && (v as any)._lastT > 1) {
+              setLoopCount((c) => c + 1);
+            }
+            (v as any)._lastT = v.currentTime;
+          }}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/video/hero-walkthrough.mp4" type="video/mp4" />
