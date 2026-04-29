@@ -50,8 +50,8 @@ const Index = () => {
         <Sticker variant="starburst" color="red" rotate={-12} className="absolute top-24 right-[12%] w-36 h-36 text-sm hidden md:grid z-20">
           MUSEUM OF<br/>LAUGHTER
         </Sticker>
-        <Sticker variant="circle" color="turquoise" rotate={10} className="absolute bottom-32 left-[8%] w-32 h-32 text-xs hidden md:grid z-20">
-          PLEASE<br/>DO TOUCH<br/>EVERYTHING.
+        <Sticker variant="circle" color="turquoise" rotate={10} className="absolute bottom-32 left-[8%] w-36 h-36 text-[11px] leading-tight hidden md:grid z-20">
+          <span className="block px-2">PLEASE<br/>DO TOUCH<br/>EVERYTHING.</span>
         </Sticker>
 
         <div className="container relative z-10 py-24 text-center">
