@@ -55,6 +55,10 @@ export default {
           DEFAULT: "hsl(var(--cool-gray))",
           foreground: "hsl(var(--cool-gray-foreground))",
         },
+        cream: {
+          DEFAULT: "hsl(var(--cream))",
+          foreground: "hsl(var(--cream-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
