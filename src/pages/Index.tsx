@@ -8,6 +8,7 @@ import TicketReminder from "@/components/site/TicketReminder";
 import RotatingHeadline from "@/components/site/RotatingHeadline";
 import collage from "@/assets/brand-collage.jpg";
 import roundLogo from "@/assets/haha-hero-logo.png";
+import hahaInterior from "@/assets/haha-interior.png";
 import exhibitSumo from "@/assets/exhibit-sumo.jpg";
 import exhibitLaundryWall from "@/assets/exhibit-laundry-wall.jpg";
 import exhibitWashers from "@/assets/exhibit-washers.jpg";
