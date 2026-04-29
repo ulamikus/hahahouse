@@ -17,7 +17,13 @@ import camera from "@/assets/icon-camera.png";
  *  - "wallpaper": tiled doodle pattern (subtle), great for purple/dark hero
  *  - "scatter": only the floating icon cut-outs (no background pattern)
  */
-type Props = { variant?: "wallpaper" | "scatter"; className?: string; tone?: "light" | "dark" };
+type Props = {
+  variant?: "wallpaper" | "scatter";
+  className?: string;
+  tone?: "light" | "dark" | "cream";
+  tileSize?: number;
+  showFloaters?: boolean;
+};
 
 const floaters = [
   { src: duck,     pos: "top-6 left-[6%]",         w: "w-20 md:w-28",  delay: "0s",   rot: "-8deg"  },
@@ -31,29 +37,46 @@ const floaters = [
   { src: iceCream, pos: "top-[60%] right-[40%]",   w: "w-14 md:w-20",  delay: "1.5s", rot: "-10deg" },
 ];
 
-const Doodles = ({ variant = "wallpaper", className = "", tone = "dark" }: Props) => (
-  <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
-    {variant === "wallpaper" && (
-      <div
-        className={`absolute inset-0 ${tone === "dark" ? "opacity-25 mix-blend-screen" : "opacity-30 mix-blend-multiply"}`}
-        style={{
-          backgroundImage: `url(${doodles})`,
-          backgroundSize: "640px",
-          backgroundRepeat: "repeat",
-        }}
-      />
-    )}
-    {floaters.map((f, i) => (
-      <img
-        key={i}
-        src={f.src}
-        alt=""
-        aria-hidden
-        className={`absolute ${f.pos} ${f.w} animate-float drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]`}
-        style={{ animationDelay: f.delay, transform: `rotate(${f.rot})` }}
-      />
-    ))}
-  </div>
-);
+const Doodles = ({
+  variant = "wallpaper",
+  className = "",
+  tone = "dark",
+  tileSize,
+  showFloaters = true,
+}: Props) => {
+  const size = tileSize ?? (tone === "cream" ? 1100 : 640);
+  const wallpaperClass =
+    tone === "dark"
+      ? "opacity-25 mix-blend-screen"
+      : tone === "cream"
+      ? "opacity-[0.18] mix-blend-multiply"
+      : "opacity-30 mix-blend-multiply";
+
+  return (
+    <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
+      {variant === "wallpaper" && (
+        <div
+          className={`absolute inset-0 ${wallpaperClass}`}
+          style={{
+            backgroundImage: `url(${doodles})`,
+            backgroundSize: `${size}px`,
+            backgroundRepeat: "repeat",
+          }}
+        />
+      )}
+      {showFloaters &&
+        floaters.map((f, i) => (
+          <img
+            key={i}
+            src={f.src}
+            alt=""
+            aria-hidden
+            className={`absolute ${f.pos} ${f.w} animate-float drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]`}
+            style={{ animationDelay: f.delay, transform: `rotate(${f.rot})` }}
+          />
+        ))}
+    </div>
+  );
+};
 
 export default Doodles;
