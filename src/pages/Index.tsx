@@ -41,9 +41,12 @@ const events = [
 ];
 
 const reviews = [
-  { name: "Marko T.", quote: "I came for a joke. Stayed for the existential crisis. 10/10." },
-  { name: "Lana P.", quote: "Genuinely funny. I don't say that often. Or ever, really." },
-  { name: "Ivo K.", quote: "Took my mother-in-law. We bonded. Terrifying." },
+  { name: "My Therapist", verdict: "Cancel my next six sessions.", quote: "Whatever you did to this person in the ball pit fixed something I couldn't.", stars: 5 },
+  { name: "The Mona Lisa", verdict: "Finally, competition.", quote: "I've smiled politely for 500 years. These people made me actually laugh. Rude.", stars: 5 },
+  { name: "My Ex", verdict: "Worst date of my life.", quote: "He laughed harder at a wall of washing machines than at any of my jokes. We broke up in the gift shop.", stars: 1 },
+  { name: "A Pigeon Outside", verdict: "Concerning noise levels.", quote: "Cannot hear myself coo. Constant screaming from inside the building. Will not return.", stars: 2 },
+  { name: "My Smartwatch", verdict: "Heart rate: alarming.", quote: "Detected a fall. It was the ball pit. Detected another fall. Also the ball pit. I have stopped trying.", stars: 5 },
+  { name: "Local Comedian", verdict: "Lost my job to a building.", quote: "I do this for a living and a room of laundry got bigger laughs than my whole set. Considering a career change.", stars: 4 },
 ];
 
 const Index = () => {
