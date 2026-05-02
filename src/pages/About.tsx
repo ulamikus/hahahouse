@@ -185,18 +185,30 @@ const About = () => (
       </div>
     </section>
 
-    {/* STICKERS */}
-    <section className="py-24 bg-white border-t border-navy/10">
+    {/* FAVORITE PARTS */}
+    <section className="py-24 bg-cream border-t border-navy/10">
       <div className="container">
-        <p className="italic text-primary text-sm mb-3">we hand them out. you stick them places.</p>
+        <p className="italic text-primary text-sm mb-3">we asked. they answered. mostly honestly.</p>
         <div className="flex items-end justify-between gap-6 flex-wrap">
-          <h2 className="font-display text-5xl md:text-7xl text-navy">Stickers Are Real</h2>
-          <Sticker variant="arrow" color="green" rotate={-3} className="text-base">
-            FREE WITH ENTRY
+          <h2 className="font-display text-5xl md:text-7xl text-navy">Favorite Part Of The Job</h2>
+          <Sticker variant="starburst" color="green" rotate={-3} className="w-24 h-24 text-[10px]">
+            UNFILTERED<br/>RESPONSES
           </Sticker>
         </div>
-        <div className="mt-10 rounded-3xl overflow-hidden">
-          <img src={stickers} alt="HaHaHouse stickers" className="w-full h-auto block" />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            { name: "Andrea", quote: "Watching a grumpy adult walk in and a 7-year-old walk out." },
+            { name: "Marko", quote: "The exact moment a kid realizes the floor is not the floor." },
+            { name: "Iva", quote: "When someone says 'I didn't know I needed this' on the way out." },
+            { name: "Luka", quote: "Building something dumb and watching it work perfectly." },
+            { name: "Petra", quote: "Birthday parties. Specifically the chaos right before the cake." },
+            { name: "Tin", quote: "When a stranger laughs at one of my comics. Then I cry. Privately." },
+          ].map((p) => (
+            <div key={p.name} className="bg-white rounded-2xl border-2 border-navy p-6 shadow-[6px_6px_0_0_hsl(var(--navy))]">
+              <p className="font-display text-2xl text-navy leading-snug">"{p.quote}"</p>
+              <p className="mt-4 font-mono uppercase tracking-wider text-xs text-primary">— {p.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
