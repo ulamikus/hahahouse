@@ -83,26 +83,40 @@ const PrivateEvents = () => {
       <section className="relative py-24 bg-white overflow-hidden">
         <div className="container">
           <p className="italic text-primary text-sm mb-3">we've hosted weirder. probably.</p>
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <h2 className="font-display text-5xl md:text-7xl text-navy">What You Can Host Here</h2>
-            <Sticker variant="arrow" color="turquoise" rotate={-4} className="text-base">
+          <h2 className="font-display text-5xl md:text-7xl text-navy">What You Can Host Here</h2>
+
+          <div className="relative mt-10">
+            <Sticker
+              variant="arrow"
+              color="turquoise"
+              rotate={-4}
+              className="absolute -top-4 right-0 md:right-2 text-base z-10"
+            >
               SCROLL →
             </Sticker>
-          </div>
 
-          <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
-            {eventTypes.map((e, i) => {
-              const tints = ["bg-yellow", "bg-turquoise", "bg-orange", "bg-red", "bg-green", "bg-primary"];
-              return (
-                <div key={e.title} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
-                  <div className={`rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center text-8xl`}>
-                    {e.emoji}
+            <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
+              {eventTypes.map((e, i) => {
+                const tints = [
+                  "bg-yellow/40",
+                  "bg-turquoise/40",
+                  "bg-orange/30",
+                  "bg-red/25",
+                  "bg-green/40",
+                  "bg-cream",
+                  "bg-cool-gray/60",
+                ];
+                return (
+                  <div key={e.title} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
+                    <div className={`rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center text-8xl border border-navy/10`}>
+                      {e.emoji}
+                    </div>
+                    <h3 className="mt-4 font-display text-2xl text-navy">{e.title}</h3>
+                    <p className="mt-2 text-navy/80">{e.desc}</p>
                   </div>
-                  <h3 className="mt-4 font-display text-2xl text-navy">{e.title}</h3>
-                  <p className="mt-2 text-navy/80">{e.desc}</p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <p className="mt-6 text-muted-foreground italic">if it's not on the list, ask anyway. we say yes a lot.</p>
         </div>
