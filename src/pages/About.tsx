@@ -36,7 +36,7 @@ const gallery = [g1, g2, g3, g4, g1, g3, g2, g4, g3, g1];
 
 const About = () => (
   <Layout>
-    {/* HERO — matches homepage intro pattern */}
+    {/* HERO, matches homepage intro pattern */}
     <section className="relative bg-white border-b border-navy/10">
       <div className="container py-24 grid gap-12 md:gap-16 md:grid-cols-2 md:items-center">
         <div>

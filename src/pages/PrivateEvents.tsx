@@ -47,7 +47,7 @@ const PrivateEvents = () => {
 
   return (
     <Layout>
-      {/* HERO — matches homepage intro pattern */}
+      {/* HERO, matches homepage intro pattern */}
       <section className="relative bg-white border-b border-navy/10">
         <div className="container py-24 grid gap-12 md:gap-16 md:grid-cols-2 md:items-center">
           <div>
@@ -58,7 +58,7 @@ const PrivateEvents = () => {
               className="w-64 md:w-80 h-auto mb-8"
             />
             <p className="text-navy text-lg md:text-xl leading-relaxed">
-              Birthdays. Bachelor parties. Team building. Brand launches. Someone even shot a music video here once. If it involves people in a room having a weirdly good time, we can probably host it. Whole house bookings, half-day, evenings, daytime — just ask.
+              Birthdays. Bachelor parties. Team building. Brand launches. Someone even shot a music video here once. If it involves people in a room having a weirdly good time, we can probably host it. Whole house bookings, half-day, evenings, daytime, just ask.
             </p>
           </div>
           <div className="relative">
@@ -79,7 +79,7 @@ const PrivateEvents = () => {
         </p>
       </div>
 
-      {/* EVENT TYPES — like exhibits scroller */}
+      {/* EVENT TYPES, like exhibits scroller */}
       <section className="relative py-24 bg-white overflow-hidden">
         <div className="container">
           <p className="italic text-primary text-sm mb-3">we've hosted weirder. probably.</p>

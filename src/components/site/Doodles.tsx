@@ -10,7 +10,7 @@ import cat from "@/assets/icon-cat.png";
 import camera from "@/assets/icon-camera.png";
 
 /**
- * Doodles — full-bleed brand doodle wallpaper + a few floating icon cut-outs.
+ * Doodles, full-bleed brand doodle wallpaper + a few floating icon cut-outs.
  * Use inside any `relative overflow-hidden` parent.
  *
  * `variant`:

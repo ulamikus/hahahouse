@@ -51,7 +51,7 @@ const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   return (
     <Layout>
-      {/* HERO — full-bleed walkthrough video, Color Factory style */}
+      {/* HERO, full-bleed walkthrough video, Color Factory style */}
       <section className="relative w-full h-[88vh] min-h-[560px] overflow-hidden bg-navy">
         {/* Video layer */}
         <video
@@ -126,7 +126,7 @@ const Index = () => {
         </p>
       </div>
 
-      {/* WHAT IS — intro section */}
+      {/* WHAT IS, intro section */}
       <section className="py-24 bg-white">
         <div className="container grid gap-12 md:gap-16 md:grid-cols-2 md:items-stretch">
           <div className="flex flex-col justify-center">
@@ -181,8 +181,11 @@ const Index = () => {
           <div className="text-center max-w-3xl mx-auto">
             <p className="italic text-primary text-sm mb-3">the part where we make the case.</p>
             <h2 className="font-display text-5xl md:text-7xl text-navy">Pick Your Poison</h2>
+            <p className="mt-4 text-navy/70 text-lg italic">
+              we also host basically anything. brand collabs, music videos, your aunt's third wedding. if it has people in it, we're probably down.
+            </p>
             <p className="mt-6 text-navy/80 text-lg md:text-xl leading-relaxed">
-              Restaurants are boring. Bars are loud. Bowling is bowling. We're the third option you didn't know existed — a whole house of stuff designed to make a group of people laugh together. Birthdays land harder. Teams actually bond. Bachelorettes don't end in regret. Even your weird uncle's retirement party becomes a story people retell. Whatever the occasion, it's better here.
+              Restaurants are boring. Bars are loud. Bowling is bowling. We're the third option you didn't know existed, a whole house of stuff designed to make a group of people laugh together. Birthdays land harder. Teams actually bond. Bachelorettes don't end in regret. Even your weird uncle's retirement party becomes a story people retell. Whatever the occasion, it's better here.
             </p>
           </div>
 
@@ -261,7 +264,7 @@ const Index = () => {
                   <Clock className="w-6 h-6 text-primary shrink-0" />
                   <p className="font-display text-2xl text-navy">Hours</p>
                 </div>
-                <p className="mt-2 text-navy/80">09:00–21:00 — yes, every day</p>
+                <p className="mt-2 text-navy/80">09:00–21:00, yes, every day</p>
               </div>
               <div>
                 <div className="flex items-center gap-3">
@@ -309,7 +312,7 @@ const Index = () => {
                 <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
                   "{r.quote}"
                 </p>
-                <p className="mt-6 font-bold text-navy">— {r.name}</p>
+                <p className="mt-6 font-bold text-navy">, {r.name}</p>
               </div>
             ))}
           </div>
