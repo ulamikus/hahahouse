@@ -42,74 +42,110 @@ const Shop = () => {
 
   return (
     <Layout>
-      {/* HERO */}
-      <section className="relative bg-yellow overflow-hidden">
-        <Doodles variant="wallpaper" tone="light" />
-        <Sticker variant="starburst" color="red" rotate={-10} className="absolute top-10 left-[6%] w-28 h-28 text-xs hidden md:grid z-10">
-          GIFT<br/>WRAP<br/>FREE
-        </Sticker>
-        <div className="container py-24 text-center relative">
-          <h1 className="font-display text-6xl md:text-8xl text-navy text-balance">Take the Funny Home.</h1>
-          <p className="mt-6 text-navy/80 text-xl max-w-2xl mx-auto">
-            Gift tickets and merch. Both make excellent presents. One more than the other.
-          </p>
-          <button
-            onClick={() => setOpen(true)}
-            className="absolute top-6 right-6 rounded-full bg-navy text-white px-5 py-3 font-bold flex items-center gap-2 z-20"
-          >
-            <ShoppingBag className="w-5 h-5" /> {cart.reduce((a, i) => a + i.qty, 0)}
-          </button>
+      {/* HERO — matches homepage intro pattern */}
+      <section className="relative bg-white border-b border-navy/10">
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Open cart"
+          className="absolute top-6 right-6 rounded-full bg-navy text-white px-5 py-3 font-bold flex items-center gap-2 z-20 hover:bg-primary transition-colors"
+        >
+          <ShoppingBag className="w-5 h-5" /> {cart.reduce((a, i) => a + i.qty, 0)}
+        </button>
+        <div className="container py-24 grid gap-12 md:gap-16 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="font-display text-primary text-3xl md:text-4xl mb-6">Take home a piece of</p>
+            <img
+              src={hahaWordmark}
+              alt="HaHa House"
+              className="w-64 md:w-80 h-auto mb-8"
+            />
+            <p className="text-navy text-lg md:text-xl leading-relaxed">
+              Gift tickets and merch. Both make excellent presents. One more than the other. Either way, someone gets to laugh and you get to feel generous. Win-win. Mostly win.
+            </p>
+          </div>
+          <div className="relative">
+            <Sticker variant="starburst" color="red" rotate={-8} className="absolute -top-4 -right-2 w-28 h-28 text-xs z-10">
+              GIFT<br/>WRAP<br/>FREE
+            </Sticker>
+            <h1 className="font-display text-6xl md:text-8xl text-navy text-balance">
+              Take the Funny Home.
+            </h1>
+          </div>
         </div>
       </section>
+
+      {/* SUB-STRIP */}
+      <div className="bg-white border-b border-navy/10">
+        <p className="container py-4 text-center font-mono uppercase tracking-[0.25em] text-xs md:text-sm text-navy font-bold">
+          Free shipping over €40 · Digital tickets delivered instantly
+        </p>
+      </div>
 
       {/* GIFT TICKETS */}
       <section className="py-24 bg-white">
         <div className="container">
-          <h2 className="font-display text-5xl md:text-6xl text-navy">Give the Gift of Awkward Joy.</h2>
-          <p className="mt-3 text-muted-foreground italic">A ticket to HaHaHouse. For someone you like. Or someone you owe an apology to.</p>
+          <p className="italic text-primary text-sm mb-3">the gift that doesn't end up in a drawer.</p>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="font-display text-5xl md:text-7xl text-navy">Give the Gift of Awkward Joy</h2>
+            <Sticker variant="pill" color="turquoise" rotate={3} className="text-sm">
+              INSTANT DELIVERY
+            </Sticker>
+          </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {giftTickets.map((g) => (
-              <div key={g.id} className="rounded-3xl border-2 border-primary p-7 flex flex-col">
-                <span className="text-4xl">{g.emoji}</span>
-                <h3 className="mt-4 font-display text-2xl text-navy">{g.name}</h3>
-                <p className="mt-1 font-display text-3xl text-primary">€{g.price}</p>
-                <p className="mt-3 text-navy/70 flex-1 italic">{g.desc}</p>
+              <article key={g.id} className="flex flex-col border-t-4 border-navy pt-6">
+                <span className="text-5xl">{g.emoji}</span>
+                <h3 className="mt-5 font-display text-3xl text-navy">{g.name}</h3>
+                <p className="mt-2 font-display text-3xl text-primary">€{g.price}</p>
+                <p className="mt-3 text-navy/80 italic flex-1">{g.desc}</p>
                 <button
                   onClick={() => add(g.id, g.name, g.price)}
-                  className="mt-6 rounded-full bg-yellow text-navy font-bold px-6 py-3 hover:bg-red hover:text-white transition-colors"
+                  className="mt-6 self-start font-bold text-primary hover:text-navy transition-colors"
                 >
-                  Buy Now
+                  Buy Now →
                 </button>
-              </div>
+              </article>
             ))}
           </div>
-          <p className="mt-8 text-sm text-muted-foreground italic">delivered digitally. instantly. no wrapping paper required.</p>
+          <p className="mt-10 text-center text-navy/60 italic">delivered digitally. instantly. no wrapping paper required.</p>
         </div>
       </section>
 
-      {/* MERCH */}
-      <section className="py-24 bg-orange">
+      {/* MERCH — horizontal scroll like exhibits */}
+      <section className="relative py-24 bg-white overflow-hidden border-t border-navy/10">
         <div className="container">
-          <h2 className="font-display text-5xl md:text-6xl text-white">Wear the Bit.</h2>
-          <p className="mt-3 text-white/90 italic">Limited merch. Unlimited personality.</p>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {merch.map((m) => (
-              <div key={m.id} className="rounded-3xl bg-white p-6 flex flex-col">
-                <div className="aspect-square rounded-2xl bg-cool-gray grid place-items-center text-7xl">{m.emoji}</div>
-                <h3 className="mt-5 font-display text-xl text-navy">{m.name}</h3>
-                <p className="text-primary font-bold">€{m.price}</p>
-                <button
-                  onClick={() => add(m.id, m.name, m.price)}
-                  className="mt-4 rounded-full border-2 border-primary text-primary font-bold px-5 py-2 hover:bg-primary hover:text-white transition-colors"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            ))}
+          <p className="italic text-primary text-sm mb-3">limited drops. unlimited personality.</p>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <h2 className="font-display text-5xl md:text-7xl text-navy">Wear the Bit</h2>
+            <Sticker variant="arrow" color="yellow" rotate={-4} className="text-base">
+              SCROLL →
+            </Sticker>
           </div>
-          <p className="mt-8 text-white/90 italic">yes the socks are real. yes people buy them. no we don't question it.</p>
+
+          <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
+            {merch.map((m, i) => {
+              const tints = ["bg-yellow", "bg-turquoise", "bg-orange", "bg-red"];
+              return (
+                <div key={m.id} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
+                  <div className={`rounded-3xl overflow-hidden aspect-[4/3] ${tints[i % tints.length]} grid place-items-center text-8xl`}>
+                    {m.emoji}
+                  </div>
+                  <div className="mt-4 flex items-baseline justify-between gap-3">
+                    <p className="font-display text-2xl text-navy">{m.name}</p>
+                    <p className="font-display text-2xl text-primary">€{m.price}</p>
+                  </div>
+                  <button
+                    onClick={() => add(m.id, m.name, m.price)}
+                    className="mt-3 font-bold text-primary hover:text-navy transition-colors"
+                  >
+                    Add to Cart →
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-6 text-muted-foreground italic">yes the socks are real. yes people buy them.</p>
         </div>
       </section>
 
