@@ -108,7 +108,7 @@ const PrivateEvents = () => {
                 ];
                 return (
                   <div key={e.title} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
-                    <div className={`rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center text-8xl border border-navy/10`}>
+                    <div className={`rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center text-8xl border-2 border-primary`}>
                       {e.emoji}
                     </div>
                     <h3 className="mt-4 font-display text-2xl text-navy">{e.title}</h3>
