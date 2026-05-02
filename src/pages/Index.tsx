@@ -17,11 +17,11 @@ import exhibitBallpit from "@/assets/exhibit-ballpit.jpg";
 import exhibitWheel from "@/assets/exhibit-wheel.jpg";
 
 const exhibits = [
-  { img: exhibitSumo, label: "Sumo Smackdown", color: "bg-yellow" },
-  { img: exhibitLaundryWall, label: "Laundry Rules", color: "bg-orange" },
-  { img: exhibitWashers, label: "Spin Cycle", color: "bg-red" },
-  { img: exhibitBallpit, label: "Ball Pit Abyss", color: "bg-turquoise" },
-  { img: exhibitWheel, label: "Wheel of Life", color: "bg-green" },
+  { img: exhibitSumo, label: "The Arena", desc: "Suit up, square off, and find out who in your group has been waiting their whole life to do this.", color: "bg-yellow" },
+  { img: exhibitLaundryWall, label: "The Wall of Rules", desc: "Read them. Break them. We don't actually enforce any of them. That's the point.", color: "bg-orange" },
+  { img: exhibitWashers, label: "The Spin Room", desc: "A wall of washing machines doing a job none of them were built for. You'll get it when you see it.", color: "bg-red" },
+  { img: exhibitBallpit, label: "The Pit", desc: "It's a ball pit. For adults. We don't have to explain it. You already want to jump in.", color: "bg-turquoise" },
+  { img: exhibitWheel, label: "The Big Wheel", desc: "Spin it. Do whatever it says. Refuse and your group decides your punishment.", color: "bg-green" },
 ];
 
 const offers = [
