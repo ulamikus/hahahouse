@@ -152,11 +152,14 @@ const About = () => (
     <section className="py-24 bg-white border-t border-navy/10">
       <div className="container">
         <p className="italic text-primary text-sm mb-3">no filters. just chaos.</p>
-        <h2 className="font-display text-5xl md:text-7xl text-navy">The Place, In Photos</h2>
+        <h2 className="font-display text-5xl md:text-7xl text-navy">The Team, In The Wild</h2>
+        <p className="mt-6 max-w-2xl text-navy/80 text-lg">
+          Candid moments from the people who keep this place running. Mid-laugh, mid-build, mid-coffee. Mostly mid-coffee.
+        </p>
         <div className="mt-12 columns-2 md:columns-3 lg:columns-4 gap-4 [&>*]:mb-4">
           {gallery.map((src, i) => (
             <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden bg-cool-gray">
-              <img src={src} alt={`Gallery ${i + 1}`} loading="lazy" className="w-full h-auto block" />
+              <img src={src} alt={`The team at HaHaHouse ${i + 1}`} loading="lazy" className="w-full h-auto block" />
             </div>
           ))}
         </div>
