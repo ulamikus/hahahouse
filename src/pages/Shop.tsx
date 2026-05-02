@@ -82,33 +82,33 @@ const Shop = () => {
       </div>
 
       {/* GIFT TICKETS */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white border-b border-navy/10">
         <div className="container">
-          <p className="italic text-primary text-sm mb-3">the gift that doesn't end up in a drawer.</p>
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <h2 className="font-display text-5xl md:text-7xl text-navy">Give the Gift of Awkward Joy</h2>
-            <Sticker variant="pill" color="turquoise" rotate={3} className="text-sm">
+          <div className="flex items-end justify-between gap-4 flex-wrap mb-6">
+            <div>
+              <p className="italic text-primary text-sm mb-1">the gift that doesn't end up in a drawer.</p>
+              <h2 className="font-display text-3xl md:text-4xl text-navy">Gift Tickets</h2>
+            </div>
+            <Sticker variant="pill" color="turquoise" rotate={3} className="text-xs">
               INSTANT DELIVERY
             </Sticker>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-3">
             {giftTickets.map((g) => (
-              <article key={g.id} className="flex flex-col border-t-4 border-navy pt-6">
-                <span className="text-5xl">{g.emoji}</span>
-                <h3 className="mt-5 font-display text-3xl text-navy">{g.name}</h3>
-                <p className="mt-2 font-display text-3xl text-primary">€{g.price}</p>
-                <p className="mt-3 text-navy/80 italic flex-1">{g.desc}</p>
-                <button
-                  onClick={() => add(g.id, g.name, g.price)}
-                  className="mt-6 self-start font-bold text-primary hover:text-navy transition-colors"
-                >
-                  Buy Now →
-                </button>
-              </article>
+              <button
+                key={g.id}
+                onClick={() => add(g.id, g.name, g.price)}
+                className="flex items-center justify-between gap-4 rounded-2xl border-2 border-primary px-5 py-4 text-left hover:bg-primary hover:text-white transition-colors group"
+              >
+                <div className="min-w-0">
+                  <p className="font-display text-lg text-navy group-hover:text-white truncate">{g.name}</p>
+                  <p className="text-xs text-navy/60 group-hover:text-white/80 italic truncate">{g.desc}</p>
+                </div>
+                <span className="font-display text-2xl text-primary group-hover:text-white shrink-0">€{g.price}</span>
+              </button>
             ))}
           </div>
-          <p className="mt-10 text-center text-navy/60 italic">delivered digitally. instantly. no wrapping paper required.</p>
         </div>
       </section>
 
