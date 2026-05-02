@@ -177,22 +177,37 @@ const Index = () => {
 
       {/* OFFERS */}
       <section className="relative py-24 bg-white">
-        <div className="container">
-          <p className="italic text-primary text-sm mb-3 text-center">birthdays. shoots. retirements. whatever.</p>
-          <h2 className="font-display text-5xl md:text-7xl text-navy text-center">Pick Your Poison</h2>
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {offers.map((o) => (
+        <div className="container max-w-5xl">
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="italic text-primary text-sm mb-3">the part where we make the case.</p>
+            <h2 className="font-display text-5xl md:text-7xl text-navy">Pick Your Poison</h2>
+            <p className="mt-6 text-navy/80 text-lg md:text-xl leading-relaxed">
+              Restaurants are boring. Bars are loud. Bowling is bowling. We're the third option you didn't know existed — a whole house of stuff designed to make a group of people laugh together. Birthdays land harder. Teams actually bond. Bachelorettes don't end in regret. Even your weird uncle's retirement party becomes a story people retell. Whatever the occasion, it's better here.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {offers.map((title) => (
               <Link
-                key={o.title}
+                key={title}
                 to="/private-events"
-                className="rounded-[2rem] border-2 border-primary p-8 flex items-center gap-5 hover:bg-primary/5 transition-colors"
+                className="rounded-[2rem] border-2 border-primary px-7 py-6 flex items-center justify-between gap-4 hover:bg-primary hover:text-white transition-colors group"
               >
-                <span className="text-5xl shrink-0">{o.emoji}</span>
-                <h3 className="font-display text-2xl text-navy leading-tight">{o.title}</h3>
+                <h3 className="font-display text-2xl text-navy leading-tight group-hover:text-white">{title}</h3>
+                <span className="font-display text-2xl text-primary group-hover:text-white shrink-0">→</span>
               </Link>
             ))}
           </div>
-          <p className="mt-10 text-center text-navy/60 italic">full details on the events page.</p>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/private-events"
+              className="inline-flex rounded-full bg-yellow text-navy font-bold px-8 py-4 hover:bg-red hover:text-white transition-colors shadow-[0_8px_0_rgba(0,0,0,0.18)]"
+            >
+              Plan Your Event →
+            </Link>
+            <p className="mt-4 text-navy/60 italic text-sm">we reply within 48 hours. usually less.</p>
+          </div>
         </div>
       </section>
 
