@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 /**
- * Sticker — rotated starburst / pill / arrow label inspired by the
+ * Sticker, rotated starburst / pill / arrow label inspired by the
  * HaHaHouse sticker sheet. Drop into any `relative` parent and position
  * with className.
  */

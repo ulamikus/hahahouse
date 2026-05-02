@@ -42,7 +42,7 @@ const Shop = () => {
 
   return (
     <Layout>
-      {/* HERO — matches homepage intro pattern */}
+      {/* HERO, matches homepage intro pattern */}
       <section className="relative bg-white border-b border-navy/10">
         <button
           onClick={() => setOpen(true)}
@@ -112,7 +112,7 @@ const Shop = () => {
         </div>
       </section>
 
-      {/* MERCH — horizontal scroll like exhibits */}
+      {/* MERCH, horizontal scroll like exhibits */}
       <section className="relative py-24 bg-white overflow-hidden border-t border-navy/10">
         <div className="container">
           <p className="italic text-primary text-sm mb-3">limited drops. unlimited personality.</p>

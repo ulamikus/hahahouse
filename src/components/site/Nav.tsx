@@ -16,7 +16,7 @@ const Nav = () => {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-[0_1px_0_0_hsl(var(--border))]">
       <div className="container flex items-center justify-between h-20">
         <Link to="/" aria-label="HaHaHouse home" className="flex items-center">
-          <img src={logo} alt="HaHaHouse — Museum of Laughter" className="h-14 w-auto" />
+          <img src={logo} alt="HaHaHouse, Museum of Laughter" className="h-14 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
