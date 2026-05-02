@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ShoppingBag, X, Plus, Minus } from "lucide-react";
 import Layout from "@/components/site/Layout";
-import Doodles from "@/components/site/Doodles";
 import Sticker from "@/components/site/Sticker";
+import hahaWordmark from "@/assets/haha-wordmark.png";
 
 type Item = { id: string; name: string; price: number; qty: number };
 
