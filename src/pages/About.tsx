@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -6,9 +5,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Layout from "@/components/site/Layout";
-import Doodles from "@/components/site/Doodles";
 import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
+import hahaWordmark from "@/assets/haha-wordmark.png";
 import mrH from "@/assets/character-mrh.jpg";
 import stickers from "@/assets/brand-stickers.jpg";
 import founder from "@/assets/founder.jpg";
@@ -37,76 +36,80 @@ const gallery = [g1, g2, g3, g4, g1, g3, g2, g4, g3, g1];
 
 const About = () => (
   <Layout>
-    {/* HERO */}
-    <section className="relative bg-green overflow-hidden">
-      <Doodles variant="wallpaper" tone="light" />
-      <Sticker variant="starburst" color="red" rotate={-15} className="absolute top-12 left-[8%] w-28 h-28 text-xs hidden md:grid z-10">
-        SINCE<br/>2024
-      </Sticker>
-      <Sticker variant="circle" color="primary" rotate={12} className="absolute bottom-12 right-[8%] w-28 h-28 text-xs hidden md:grid z-10">
-        SMILE,<br/>YOU'RE<br/>HERE
-      </Sticker>
-      <div className="container relative py-28 text-center">
-        <h1 className="font-display text-5xl md:text-8xl text-navy text-balance max-w-4xl mx-auto">
-          Meet the People Behind the Laughing.
-        </h1>
-        <p className="mt-6 text-navy/80 text-xl max-w-2xl mx-auto text-balance">
-          We built a museum about humor. People laughed at the idea first. Now they pay to come in.
-        </p>
+    {/* HERO — matches homepage intro pattern */}
+    <section className="relative bg-white border-b border-navy/10">
+      <div className="container py-24 grid gap-12 md:gap-16 md:grid-cols-2 md:items-center">
+        <div>
+          <p className="font-display text-primary text-3xl md:text-4xl mb-6">The people behind</p>
+          <img
+            src={hahaWordmark}
+            alt="HaHa House"
+            className="w-64 md:w-80 h-auto mb-8"
+          />
+          <p className="text-navy text-lg md:text-xl leading-relaxed">
+            We built a museum about humor. People laughed at the idea first. Now they pay to come in. Forty exhibits, three weird characters, one founder who refused to take no for an answer, and a small team that genuinely believes laughter is a basic human need. This is who we are and why this place exists.
+          </p>
+        </div>
+        <div className="relative">
+          <Sticker variant="starburst" color="red" rotate={-12} className="absolute -top-4 -right-2 w-28 h-28 text-xs z-10">
+            SINCE<br/>2024
+          </Sticker>
+          <h1 className="font-display text-6xl md:text-8xl text-navy text-balance">
+            Meet the People Behind the Laughing.
+          </h1>
+        </div>
       </div>
     </section>
 
+    {/* SUB-STRIP */}
+    <div className="bg-white border-b border-navy/10">
+      <p className="container py-4 text-center font-mono uppercase tracking-[0.25em] text-xs md:text-sm text-navy font-bold">
+        Built in Zagreb · Run by humans · Powered by laughter
+      </p>
+    </div>
+
     {/* CHARACTERS */}
-    <section className="relative py-24 bg-primary text-white overflow-hidden">
-      <Doodles variant="wallpaper" tone="dark" />
-      <div className="container relative">
-        <h2 className="font-display text-5xl md:text-7xl">Meet the Locals</h2>
-        <p className="mt-3 text-white/70 italic">yes, we made a whole comic about them. yes, it was necessary.</p>
-        <p className="mt-6 max-w-2xl text-white/85 text-lg">
-          Our characters guide you through the Museum of Laughter and introduce you to every exhibit. They have opinions. Strong ones.
+    <section className="relative py-24 bg-white overflow-hidden">
+      <div className="container">
+        <p className="italic text-primary text-sm mb-3">yes, we made a whole comic about them.</p>
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <h2 className="font-display text-5xl md:text-7xl text-navy">Meet the Locals</h2>
+          <Sticker variant="arrow" color="turquoise" rotate={-4} className="text-base">
+            SCROLL →
+          </Sticker>
+        </div>
+        <p className="mt-6 max-w-2xl text-navy/80 text-lg">
+          Our characters guide you through the museum and introduce every exhibit. They have opinions. Strong ones.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {characters.map((c, i) => (
-            <div
-              key={c.name}
-              className="bg-white text-navy rounded-3xl overflow-hidden shadow-[0_10px_0_rgba(0,0,0,0.25)]"
-              style={{ transform: `rotate(${i === 1 ? 1.5 : -1.5}deg)` }}
-            >
-              <div className={`aspect-square ${c.bg} grid place-items-center p-6 relative overflow-hidden`}>
-                <Doodles variant="scatter" />
+        <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
+          {characters.map((c) => (
+            <div key={c.name} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
+              <div className={`rounded-3xl overflow-hidden aspect-[4/3] ${c.bg} grid place-items-center p-6`}>
                 <img
                   src={c.img}
                   alt={c.name}
                   loading="lazy"
-                  className="relative z-10 w-full h-full object-contain"
+                  className="w-full h-full object-contain"
                   style={{
                     transform: c.flip ? "scaleX(-1)" : undefined,
                     filter: c.hue ? "hue-rotate(200deg) saturate(1.4)" : undefined,
                   }}
                 />
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-2xl">{c.name}</h3>
-                <p className="mt-2 text-navy/75 text-sm leading-relaxed">{c.desc}</p>
-              </div>
+              <h3 className="mt-4 font-display text-2xl text-navy">{c.name}</h3>
+              <p className="mt-2 text-navy/80">{c.desc}</p>
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <a href="#comic" className="inline-flex rounded-full bg-yellow text-navy font-bold px-8 py-4 hover:bg-red hover:text-white transition-colors shadow-[0_8px_0_rgba(0,0,0,0.18)]">
-            Read the Comic →
-          </a>
-        </div>
+        <p className="mt-6 text-muted-foreground italic">they're fictional. mostly.</p>
       </div>
     </section>
-
     {/* COMIC */}
-    <section id="comic" className="py-24 bg-white">
+    <section id="comic" className="py-24 bg-white border-t border-navy/10">
       <div className="container">
-        <h2 className="font-display text-5xl md:text-6xl text-navy">Peek Into Mr. H's World</h2>
-        <p className="mt-3 text-muted-foreground italic">a few pages from the comic. just enough to get you hooked.</p>
+        <p className="italic text-primary text-sm mb-3">a few pages. just enough to get you hooked.</p>
+        <h2 className="font-display text-5xl md:text-7xl text-navy">Peek Into Mr. H's World</h2>
       </div>
       <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-6">
         {[g1, g2, g3, g4, g1].map((src, i) => (
@@ -118,14 +121,14 @@ const About = () => (
     </section>
 
     {/* ANDREA */}
-    <section className="py-24 bg-white">
-      <div className="container grid gap-12 md:grid-cols-2 items-center">
-        <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-cool-gray">
+    <section className="py-24 bg-white border-t border-navy/10">
+      <div className="container grid gap-12 md:gap-16 md:grid-cols-2 md:items-center">
+        <div className="rounded-3xl overflow-hidden aspect-[4/5]">
           <img src={founder} alt="Andrea Golubić" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
-          <p className="text-primary font-bold uppercase tracking-widest text-sm">The Founder</p>
-          <h2 className="mt-2 font-display text-5xl md:text-6xl text-navy">Andrea Golubić</h2>
+          <p className="italic text-primary text-sm mb-3">the one who wouldn't let it go.</p>
+          <h2 className="font-display text-5xl md:text-7xl text-navy">Andrea Golubić</h2>
           <p className="mt-6 text-lg text-navy/80 leading-relaxed">
             When other kids wanted to be astronauts, doctors, or politicians, Andrea always knew she
             wanted to make people laugh. They laughed at the idea. She built the museum anyway.
@@ -137,12 +140,13 @@ const About = () => (
     </section>
 
     {/* GALLERY */}
-    <section className="py-24 bg-cool-gray">
+    <section className="py-24 bg-white border-t border-navy/10">
       <div className="container">
-        <h2 className="font-display text-5xl md:text-6xl text-navy">The Place, In Photos</h2>
+        <p className="italic text-primary text-sm mb-3">no filters. just chaos.</p>
+        <h2 className="font-display text-5xl md:text-7xl text-navy">The Place, In Photos</h2>
         <div className="mt-12 columns-2 md:columns-3 lg:columns-4 gap-4 [&>*]:mb-4">
           {gallery.map((src, i) => (
-            <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden bg-white">
+            <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden bg-cool-gray">
               <img src={src} alt={`Gallery ${i + 1}`} loading="lazy" className="w-full h-auto block" />
             </div>
           ))}
@@ -151,10 +155,10 @@ const About = () => (
     </section>
 
     {/* FAQ */}
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white border-t border-navy/10">
       <div className="container max-w-3xl">
-        <h2 className="font-display text-5xl md:text-6xl text-navy">Questions We've Been Asked.</h2>
-        <p className="mt-3 text-muted-foreground italic">and some we anticipated.</p>
+        <p className="italic text-primary text-sm mb-3">and some we anticipated.</p>
+        <h2 className="font-display text-5xl md:text-7xl text-navy">Questions We've Been Asked</h2>
 
         <Accordion type="single" collapsible className="mt-10">
           {faqs.map((f, i) => (
@@ -170,31 +174,31 @@ const About = () => (
     </section>
 
     {/* STICKERS */}
-    <section className="py-24 bg-cool-gray">
+    <section className="py-24 bg-white border-t border-navy/10">
       <div className="container">
+        <p className="italic text-primary text-sm mb-3">we hand them out. you stick them places.</p>
         <div className="flex items-end justify-between gap-6 flex-wrap">
-          <h2 className="font-display text-5xl md:text-6xl text-navy">Stickers Are Real.</h2>
+          <h2 className="font-display text-5xl md:text-7xl text-navy">Stickers Are Real</h2>
           <Sticker variant="arrow" color="green" rotate={-3} className="text-base">
             FREE WITH ENTRY
           </Sticker>
         </div>
-        <p className="mt-3 text-muted-foreground italic">we hand them out. you stick them places. it's a whole thing.</p>
-        <div className="mt-10 rounded-3xl overflow-hidden bg-white border-4 border-navy shadow-[0_10px_0_hsl(var(--navy))]">
+        <div className="mt-10 rounded-3xl overflow-hidden">
           <img src={stickers} alt="HaHaHouse stickers" className="w-full h-auto block" />
         </div>
       </div>
     </section>
 
     {/* PARTNERS */}
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white border-t border-navy/10">
       <div className="container">
-        <h2 className="font-display text-5xl md:text-6xl text-navy">People We Like.</h2>
-        <p className="mt-3 text-muted-foreground italic">they believed in us before it was obvious.</p>
+        <p className="italic text-primary text-sm mb-3">they believed in us before it was obvious.</p>
+        <h2 className="font-display text-5xl md:text-7xl text-navy">People We Like</h2>
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center">
           {Array.from({ length: 6 }).map((_, i) => (
             <div
               key={i}
-              className="h-16 rounded-xl bg-cool-gray grid place-items-center font-display text-navy/40 grayscale hover:grayscale-0 hover:text-primary transition"
+              className="h-16 grid place-items-center font-display text-navy/40 grayscale hover:grayscale-0 hover:text-primary transition border-t-4 border-navy pt-4"
             >
               LOGO {i + 1}
             </div>
