@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -6,9 +5,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Layout from "@/components/site/Layout";
-import Doodles from "@/components/site/Doodles";
 import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
+import hahaWordmark from "@/assets/haha-wordmark.png";
 import mrH from "@/assets/character-mrh.jpg";
 import stickers from "@/assets/brand-stickers.jpg";
 import founder from "@/assets/founder.jpg";
