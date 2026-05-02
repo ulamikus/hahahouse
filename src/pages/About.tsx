@@ -15,6 +15,12 @@ import g1 from "@/assets/exhibit-1.jpg";
 import g2 from "@/assets/exhibit-2.jpg";
 import g3 from "@/assets/exhibit-3.jpg";
 import g4 from "@/assets/exhibit-4.jpg";
+import teamAndrea from "@/assets/team-andrea.jpg";
+import teamMarko from "@/assets/team-marko.jpg";
+import teamIva from "@/assets/team-iva.jpg";
+import teamLuka from "@/assets/team-luka.jpg";
+import teamPetra from "@/assets/team-petra.jpg";
+import teamTin from "@/assets/team-tin.jpg";
 
 const characters = [
   { img: mrH, bg: "bg-orange", name: "Mr. H", desc: "Your guide. Sarcastic, reluctant, oddly irresistible. Cynicism is his default setting, irony is his mother tongue. Hates his job. Best at it." },
