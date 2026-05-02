@@ -25,13 +25,13 @@ const exhibits = [
 ];
 
 const offers = [
-  { emoji: "🎂", title: "Birthdays" },
-  { emoji: "🏆", title: "Team Building" },
-  { emoji: "🎉", title: "Pregame Parties" },
-  { emoji: "💍", title: "Bachelor / Bachelorette" },
-  { emoji: "🎬", title: "Music Videos & Shoots" },
-  { emoji: "🏢", title: "Brand Activations" },
-  { emoji: "🧓", title: "Retirements. Divorces. Whatever." },
+  "Birthdays",
+  "Team Building",
+  "Pregame Parties",
+  "Bachelor / Bachelorette",
+  "Music Videos & Shoots",
+  "Brand Activations",
+  "Retirements. Divorces. Whatever.",
 ];
 
 const events = [
