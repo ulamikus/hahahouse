@@ -12,6 +12,7 @@ const eventTypes = [
   { emoji: "💍", title: "Bachelor / Bachelorette", desc: "Better than a club. Cheaper than therapy." },
   { emoji: "🎬", title: "Music Videos & Shoots", desc: "Yes, someone actually filmed a music video here. It slapped." },
   { emoji: "🏢", title: "Brand Activations", desc: "Photogenic chaos for your launch, popup, or PR stunt." },
+  { emoji: "🧓", title: "Retirement Parties. Divorces. Whatever.", desc: "Forty years at the same job? Finally signed the papers? Cult disbanded? Book it. We don't ask questions. We just provide the ball pit." },
 ];
 
 const infoBlocks = [
