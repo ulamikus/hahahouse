@@ -110,6 +110,9 @@ const About = () => (
       <div className="container">
         <p className="italic text-primary text-sm mb-3">a few pages. just enough to get you hooked.</p>
         <h2 className="font-display text-5xl md:text-7xl text-navy">Peek Into Mr. H's World</h2>
+        <p className="mt-6 max-w-2xl text-navy/80 text-lg leading-relaxed">
+          A deadpan comic about a guy who finds everything mildly disappointing, including himself. Mr. H uses self-deprecation like a flashlight, pointing it at all the negativity we take way too seriously. The joke is on him. The joke is on us. Mostly it's just on us.
+        </p>
       </div>
       <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-6">
         {[g1, g2, g3, g4, g1].map((src, i) => (
@@ -189,18 +192,32 @@ const About = () => (
       </div>
     </section>
 
-    {/* PARTNERS */}
+    {/* TEAM */}
     <section className="py-24 bg-white border-t border-navy/10">
       <div className="container">
-        <p className="italic text-primary text-sm mb-3">they believed in us before it was obvious.</p>
-        <h2 className="font-display text-5xl md:text-7xl text-navy">People We Like</h2>
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-16 grid place-items-center font-display text-navy/40 grayscale hover:grayscale-0 hover:text-primary transition border-t-4 border-navy pt-4"
-            >
-              LOGO {i + 1}
+        <p className="italic text-primary text-sm mb-3">the humans who keep the lights on and the jokes running.</p>
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <h2 className="font-display text-5xl md:text-7xl text-navy">People We Like</h2>
+          <Sticker variant="starburst" color="yellow" rotate={-6} className="w-24 h-24 text-[10px]">
+            ON PAYROLL<br/>(MOSTLY)
+          </Sticker>
+        </div>
+        <p className="mt-6 max-w-2xl text-navy/80 text-lg">
+          Small team. Big opinions. Each one of them shows up every day to make sure you have a slightly better day than you walked in with.
+        </p>
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8">
+          {[
+            { name: "Andrea Golubić", role: "Founder & Chief Joke Officer", bio: "Started it all. Refuses to stop." },
+            { name: "Marko", role: "Operations & Vibes", bio: "Keeps the museum running. And the kettle on." },
+            { name: "Iva", role: "Front of House", bio: "First face you see. Best one too." },
+            { name: "Luka", role: "Workshop & Builds", bio: "If it spins, lights up, or makes a noise, that's him." },
+            { name: "Petra", role: "Events & Collabs", bio: "Books the parties. Survives them. Mostly." },
+            { name: "Tin", role: "Design & Comics", bio: "Draws Mr. H. Is also a little bit Mr. H." },
+          ].map((p) => (
+            <div key={p.name} className="border-t-4 border-navy pt-4">
+              <h3 className="font-display text-2xl text-navy">{p.name}</h3>
+              <p className="font-mono uppercase tracking-wider text-xs text-primary mt-1">{p.role}</p>
+              <p className="mt-3 text-navy/80">{p.bio}</p>
             </div>
           ))}
         </div>
