@@ -213,17 +213,22 @@ const About = () => (
         </p>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8">
           {[
-            { name: "Andrea Golubić", role: "Founder & Chief Joke Officer", bio: "Started it all. Refuses to stop." },
-            { name: "Marko", role: "Operations & Vibes", bio: "Keeps the museum running. And the kettle on." },
-            { name: "Iva", role: "Front of House", bio: "First face you see. Best one too." },
-            { name: "Luka", role: "Workshop & Builds", bio: "If it spins, lights up, or makes a noise, that's him." },
-            { name: "Petra", role: "Events & Collabs", bio: "Books the parties. Survives them. Mostly." },
-            { name: "Tin", role: "Design & Comics", bio: "Draws Mr. H. Is also a little bit Mr. H." },
+            { name: "Andrea Golubić", role: "Founder & Chief Joke Officer", bio: "Started it all. Refuses to stop.", img: teamAndrea, bg: "bg-orange" },
+            { name: "Marko", role: "Operations & Vibes", bio: "Keeps the museum running. And the kettle on.", img: teamMarko, bg: "bg-turquoise" },
+            { name: "Iva", role: "Front of House", bio: "First face you see. Best one too.", img: teamIva, bg: "bg-green" },
+            { name: "Luka", role: "Workshop & Builds", bio: "If it spins, lights up, or makes a noise, that's him.", img: teamLuka, bg: "bg-yellow" },
+            { name: "Petra", role: "Events & Collabs", bio: "Books the parties. Survives them. Mostly.", img: teamPetra, bg: "bg-red" },
+            { name: "Tin", role: "Design & Comics", bio: "Draws Mr. H. Is also a little bit Mr. H.", img: teamTin, bg: "bg-primary" },
           ].map((p) => (
-            <div key={p.name} className="border-t-4 border-navy pt-4">
-              <h3 className="font-display text-2xl text-navy">{p.name}</h3>
-              <p className="font-mono uppercase tracking-wider text-xs text-primary mt-1">{p.role}</p>
-              <p className="mt-3 text-navy/80">{p.bio}</p>
+            <div key={p.name}>
+              <div className={`rounded-2xl overflow-hidden aspect-[4/5] ${p.bg}`}>
+                <img src={p.img} alt={p.name} loading="lazy" width={512} height={640} className="w-full h-full object-cover" />
+              </div>
+              <div className="border-t-4 border-navy pt-4 mt-4">
+                <h3 className="font-display text-2xl text-navy">{p.name}</h3>
+                <p className="font-mono uppercase tracking-wider text-xs text-primary mt-1">{p.role}</p>
+                <p className="mt-3 text-navy/80">{p.bio}</p>
+              </div>
             </div>
           ))}
         </div>
