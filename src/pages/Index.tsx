@@ -181,6 +181,9 @@ const Index = () => {
           <div className="text-center max-w-3xl mx-auto">
             <p className="italic text-primary text-sm mb-3">the part where we make the case.</p>
             <h2 className="font-display text-5xl md:text-7xl text-navy">Pick Your Poison</h2>
+            <p className="mt-4 text-navy/70 text-lg italic">
+              we also host basically anything. brand collabs, music videos, your aunt's third wedding. if it has people in it, we're probably down.
+            </p>
             <p className="mt-6 text-navy/80 text-lg md:text-xl leading-relaxed">
               Restaurants are boring. Bars are loud. Bowling is bowling. We're the third option you didn't know existed, a whole house of stuff designed to make a group of people laugh together. Birthdays land harder. Teams actually bond. Bachelorettes don't end in regret. Even your weird uncle's retirement party becomes a story people retell. Whatever the occasion, it's better here.
             </p>
