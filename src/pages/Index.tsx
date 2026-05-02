@@ -298,28 +298,32 @@ const Index = () => {
       {/* REVIEWS */}
       <section className="relative py-24 bg-white">
         <div className="container">
-          <p className="italic text-primary text-sm mb-3">don't take our word for it.</p>
+          <p className="italic text-primary text-sm mb-3">real reviews from totally real people.</p>
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <h2 className="font-display text-5xl md:text-7xl text-navy text-balance max-w-3xl">
-              Other People Came. They Left Happy.
+              Other People Came. They Left Different.
             </h2>
             <Sticker variant="starburst" color="red" rotate={-8} className="w-28 h-28 text-sm">
-              5 STARS
+              LEGALLY<br/>UNVERIFIED
             </Sticker>
           </div>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
+          <div className="mt-12 grid gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map((r) => (
-              <div key={r.name} className="flex flex-col">
-                <div className="flex gap-1 text-red">
+              <div key={r.name} className="flex flex-col text-center items-center">
+                <div className="flex gap-1 text-yellow-500">
                   {Array.from({ length: 5 }).map((_, idx) => (
-                    <Star key={idx} className="w-5 h-5 fill-red" />
+                    <Star
+                      key={idx}
+                      className={`w-5 h-5 ${idx < r.stars ? "fill-yellow text-yellow" : "text-navy/15 fill-navy/15"}`}
+                    />
                   ))}
                 </div>
-                <p className="mt-4 font-display text-2xl text-navy leading-snug flex-1">
-                  "{r.quote}"
+                <p className="mt-4 font-bold text-navy">{r.name}</p>
+                <p className="mt-1 font-bold text-primary">{r.verdict}</p>
+                <p className="mt-3 text-navy/80 leading-relaxed flex-1">
+                  {r.quote}
                 </p>
-                <p className="mt-6 font-bold text-navy">, {r.name}</p>
               </div>
             ))}
           </div>
