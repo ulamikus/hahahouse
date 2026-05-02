@@ -178,23 +178,21 @@ const Index = () => {
       {/* OFFERS */}
       <section className="relative py-24 bg-white">
         <div className="container">
+          <p className="italic text-primary text-sm mb-3 text-center">birthdays. shoots. retirements. whatever.</p>
           <h2 className="font-display text-5xl md:text-7xl text-navy text-center">Pick Your Poison</h2>
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {offers.map((o) => (
-              <div
+              <Link
                 key={o.title}
-                className={`${o.color} rounded-[2rem] p-8 flex flex-col`}
+                to="/private-events"
+                className="rounded-[2rem] border-2 border-primary p-8 flex items-center gap-5 hover:bg-primary/5 transition-colors"
               >
-                <span className="text-6xl">{o.emoji}</span>
-                <h3 className="mt-4 font-display text-3xl text-navy">{o.title}</h3>
-                <p className="mt-3 text-navy/80 flex-1">{o.desc}</p>
-                <Link to="/private-events" className="mt-6 font-bold text-navy hover:text-primary transition-colors">
-                  See More →
-                </Link>
-              </div>
+                <span className="text-5xl shrink-0">{o.emoji}</span>
+                <h3 className="font-display text-2xl text-navy leading-tight">{o.title}</h3>
+              </Link>
             ))}
           </div>
-          <p className="mt-10 text-center text-navy/60 italic">all of these live under Private Events.</p>
+          <p className="mt-10 text-center text-navy/60 italic">full details on the events page.</p>
         </div>
       </section>
 
