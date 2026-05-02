@@ -9,7 +9,7 @@ import Sticker from "@/components/site/Sticker";
 import TicketReminder from "@/components/site/TicketReminder";
 import hahaWordmark from "@/assets/haha-wordmark.png";
 import mrH from "@/assets/character-mrh.jpg";
-import stickers from "@/assets/brand-stickers.jpg";
+
 import founder from "@/assets/founder.jpg";
 import g1 from "@/assets/exhibit-1.jpg";
 import g2 from "@/assets/exhibit-2.jpg";
