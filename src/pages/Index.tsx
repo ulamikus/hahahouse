@@ -153,25 +153,29 @@ const Index = () => {
       {/* EXHIBITS */}
       <section className="relative py-24 bg-white overflow-hidden">
         <div className="container">
-          <p className="italic text-primary text-sm mb-3">actual photos. no filter needed.</p>
+          <p className="italic text-primary text-sm mb-3">part museum, part playground, fully unhinged.</p>
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <h2 className="font-display text-5xl md:text-7xl text-navy">What's Inside</h2>
             <Sticker variant="arrow" color="turquoise" rotate={-4} className="text-base">
               SCROLL →
             </Sticker>
           </div>
+          <p className="mt-6 max-w-2xl text-navy/80 text-lg">
+            The house is split into zones. Each one is a hands-on experience built around one stupidly fun idea. You don't observe. You participate. Here's a taste.
+          </p>
 
           <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
             {exhibits.map((e, i) => (
-              <div key={i} className="snap-start shrink-0 w-[80vw] md:w-[480px]">
+              <div key={i} className="snap-start shrink-0 w-[80vw] md:w-[420px]">
                 <div className={`rounded-3xl overflow-hidden aspect-[4/3] ${e.color}`}>
                   <img src={e.img} alt={e.label} loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <p className="mt-4 font-display text-2xl text-navy">{e.label}</p>
+                <p className="mt-2 text-navy/80">{e.desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-muted-foreground italic">yes it looks like this in real life.</p>
+          <p className="mt-6 text-muted-foreground italic">and that's just five of them. there are forty.</p>
         </div>
       </section>
 
