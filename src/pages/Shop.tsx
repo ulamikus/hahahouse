@@ -112,22 +112,22 @@ const Shop = () => {
         </div>
       </section>
 
-      {/* MERCH, horizontal scroll like exhibits */}
+      {/* MERCH, vertical grid that reveals as you scroll */}
       <section className="relative py-24 bg-white overflow-hidden border-t border-navy/10">
         <div className="container">
           <p className="italic text-primary text-sm mb-3">limited drops. unlimited personality.</p>
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <h2 className="font-display text-5xl md:text-7xl text-navy">Wear the Bit</h2>
             <Sticker variant="arrow" color="yellow" rotate={-4} className="text-base">
-              SCROLL →
+              ↓ KEEP SCROLLING
             </Sticker>
           </div>
 
-          <div className="mt-12 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {merch.map((m, i) => {
               const tints = ["bg-yellow", "bg-turquoise", "bg-orange", "bg-red"];
               return (
-                <div key={m.id} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
+                <RevealCard key={m.id} delay={i * 80}>
                   <div className={`rounded-3xl overflow-hidden aspect-[4/3] ${tints[i % tints.length]} grid place-items-center text-8xl`}>
                     {m.emoji}
                   </div>
@@ -141,11 +141,11 @@ const Shop = () => {
                   >
                     Add to Cart →
                   </button>
-                </div>
+                </RevealCard>
               );
             })}
           </div>
-          <p className="mt-6 text-muted-foreground italic">yes the socks are real. yes people buy them.</p>
+          <p className="mt-10 text-muted-foreground italic">yes the socks are real. yes people buy them.</p>
         </div>
       </section>
 
