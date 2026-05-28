@@ -327,6 +327,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FIELD NOTES TEASER */}
+      <section className="relative py-24 bg-cream border-t border-navy/10">
+        <div className="container">
+          <div className="flex items-end justify-between gap-6 flex-wrap mb-12">
+            <div>
+              <p className="italic text-primary text-sm mb-3">things we've been writing down.</p>
+              <h2 className="font-display text-5xl md:text-7xl text-navy text-balance max-w-2xl">
+                Field Notes from the <span className="text-primary">Museum.</span>
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="rounded-full bg-yellow px-6 py-3 font-bold text-navy hover:bg-red hover:text-white transition-colors"
+            >
+              Read all posts →
+            </Link>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              { slug: "what-we-learned-from-1000-ball-pit-jumps", tag: "Behind the Scenes", date: "MAY 20, 2026", title: "What We Learned From 1,000 Ball Pit Jumps", tint: "bg-yellow/40", emoji: "🟡" },
+              { slug: "how-to-throw-an-office-party-people-actually-show-up-to", tag: "Private Events", date: "MAY 08, 2026", title: "How to Throw an Office Party People Actually Show Up To", tint: "bg-turquoise/40", emoji: "🏆" },
+              { slug: "things-people-have-left-behind", tag: "Behind the Scenes", date: "MAR 20, 2026", title: "Things People Have Left Behind", tint: "bg-cool-gray/60", emoji: "🧦" },
+            ].map((p) => (
+              <Link key={p.slug} to={`/blog/${p.slug}`} className="group block">
+                <div className={`rounded-3xl ${p.tint} aspect-[4/3] grid place-items-center text-6xl border-2 border-primary border-dashed transition-transform group-hover:-translate-y-1`}>
+                  <div className="text-center">
+                    <div>{p.emoji}</div>
+                    <p className="mt-2 font-mono uppercase tracking-[0.2em] text-[10px] text-navy/60">Upload image</p>
+                  </div>
+                </div>
+                <p className="mt-4 font-mono uppercase tracking-[0.2em] text-xs text-primary">{p.tag} · {p.date}</p>
+                <h3 className="mt-2 font-display text-2xl text-navy group-hover:text-primary transition-colors">{p.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <TicketReminder />
     </Layout>
   );
