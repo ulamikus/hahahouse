@@ -60,7 +60,53 @@ const POSTS: Post[] = [
       "Don't go home yet.",
     ],
   },
+  {
+    slug: "the-economics-of-a-ball-pit",
+    title: "The Economics of a Ball Pit",
+    excerpt: "How many balls does it take? How often do we wash them? Should you be asking? Yes.",
+    date: "APR 14, 2026",
+    readTime: "4 min read",
+    tag: "Behind the Scenes",
+    tint: "bg-red/25",
+    emoji: "🔴",
+    body: [
+      "A regulation HaHaHouse ball pit contains 32,000 plastic balls. We know because we counted twice and argued about it once.",
+      "They get cleaned weekly with a process we are legally not allowed to describe but which involves a leaf blower, industrial soap, and one very patient employee named Marko.",
+      "We replace ~5% of the balls every month — mostly the ones that get smuggled out in pockets. To whoever has 47 of our balls in a drawer at home: we forgive you.",
+    ],
+  },
+  {
+    slug: "why-laughter-is-the-best-kpi",
+    title: "Why Laughter Is the Best KPI",
+    excerpt: "We tried measuring engagement. Then we tried measuring smiles. Then we just listened.",
+    date: "APR 02, 2026",
+    readTime: "6 min read",
+    tag: "Private Events",
+    tint: "bg-green/40",
+    emoji: "📈",
+    body: [
+      "Most team-building events end with a survey. Ours end with people too out of breath to fill one out. We're calling that a win.",
+      "After 200+ corporate bookings, the pattern is clear: the teams who laugh together in week one are still talking to each other in month six. We have zero data to back this up. We're going with our gut.",
+      "If your KPI dashboard doesn't have a 'laughs per quarter' column, your dashboard is wrong.",
+    ],
+  },
+  {
+    slug: "things-people-have-left-behind",
+    title: "Things People Have Left Behind",
+    excerpt: "A running list of items recovered from the lost & found. Some of them are concerning.",
+    date: "MAR 20, 2026",
+    readTime: "2 min read",
+    tag: "Behind the Scenes",
+    tint: "bg-cool-gray/60",
+    emoji: "🧦",
+    body: [
+      "An incomplete inventory: 14 single socks. 3 wedding rings (all returned, all with stories). A monocle. A tooth (we hope it was a baby tooth). One full sourdough starter named Geoffrey.",
+      "Top theory: the ball pit is a portal. We have no evidence. We also have no other explanation for the monocle.",
+      "If you've lost something, email us. If you've lost Geoffrey, please come collect him. He is thriving but it's been a while.",
+    ],
+  },
 ];
+
 
 const BlogIndex = () => (
   <Layout>
