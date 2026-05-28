@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { z } from "zod";
 import Layout from "@/components/site/Layout";
 import Sticker from "@/components/site/Sticker";
@@ -6,13 +7,13 @@ import hahaWordmark from "@/assets/haha-wordmark.png";
 import { toast } from "sonner";
 
 const eventTypes = [
-  { emoji: "🎂", title: "Birthdays", desc: "Kids. Adults. Adults pretending to be kids. All welcome." },
-  { emoji: "🏆", title: "Team Building", desc: "Your colleagues will laugh. Possibly together. No trust falls." },
-  { emoji: "🎉", title: "Pregame Parties", desc: "Start the night here. Whatever happens after isn't on us." },
-  { emoji: "💍", title: "Bachelor / Bachelorette", desc: "Better than a club. Cheaper than therapy." },
-  { emoji: "🎬", title: "Music Videos & Shoots", desc: "Yes, someone actually filmed a music video here. It slapped." },
-  { emoji: "🏢", title: "Brand Activations", desc: "Photogenic chaos for your launch, popup, or PR stunt." },
-  { emoji: "🧓", title: "Retirement Parties. Divorces. Whatever.", desc: "Forty years at the same job? Finally signed the papers? Cult disbanded? Book it. We don't ask questions. We just provide the ball pit." },
+  { slug: "birthdays", emoji: "🎂", title: "Birthdays", desc: "Kids. Adults. Adults pretending to be kids. All welcome." },
+  { slug: "team-building", emoji: "🏆", title: "Team Building", desc: "Your colleagues will laugh. Possibly together. No trust falls." },
+  { slug: "pregame-parties", emoji: "🎉", title: "Pregame Parties", desc: "Start the night here. Whatever happens after isn't on us." },
+  { slug: "bachelor-bachelorette", emoji: "💍", title: "Bachelor / Bachelorette", desc: "Better than a club. Cheaper than therapy." },
+  { slug: "music-videos-shoots", emoji: "🎬", title: "Music Videos & Shoots", desc: "Yes, someone actually filmed a music video here. It slapped." },
+  { slug: "brand-activations", emoji: "🏢", title: "Brand Activations", desc: "Photogenic chaos for your launch, popup, or PR stunt." },
+  { slug: "retirements-divorces-whatever", emoji: "🧓", title: "Retirements. Divorces. Whatever.", desc: "Forty years at the same job? Finally signed the papers? Cult disbanded? Book it. We don't ask questions. We just provide the ball pit." },
 ];
 
 const infoBlocks = [
