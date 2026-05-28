@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { z } from "zod";
 import Layout from "@/components/site/Layout";
 import Sticker from "@/components/site/Sticker";
@@ -6,13 +7,13 @@ import hahaWordmark from "@/assets/haha-wordmark.png";
 import { toast } from "sonner";
 
 const eventTypes = [
-  { emoji: "🎂", title: "Birthdays", desc: "Kids. Adults. Adults pretending to be kids. All welcome." },
-  { emoji: "🏆", title: "Team Building", desc: "Your colleagues will laugh. Possibly together. No trust falls." },
-  { emoji: "🎉", title: "Pregame Parties", desc: "Start the night here. Whatever happens after isn't on us." },
-  { emoji: "💍", title: "Bachelor / Bachelorette", desc: "Better than a club. Cheaper than therapy." },
-  { emoji: "🎬", title: "Music Videos & Shoots", desc: "Yes, someone actually filmed a music video here. It slapped." },
-  { emoji: "🏢", title: "Brand Activations", desc: "Photogenic chaos for your launch, popup, or PR stunt." },
-  { emoji: "🧓", title: "Retirement Parties. Divorces. Whatever.", desc: "Forty years at the same job? Finally signed the papers? Cult disbanded? Book it. We don't ask questions. We just provide the ball pit." },
+  { slug: "birthdays", emoji: "🎂", title: "Birthdays", desc: "Kids. Adults. Adults pretending to be kids. All welcome." },
+  { slug: "team-building", emoji: "🏆", title: "Team Building", desc: "Your colleagues will laugh. Possibly together. No trust falls." },
+  { slug: "pregame-parties", emoji: "🎉", title: "Pregame Parties", desc: "Start the night here. Whatever happens after isn't on us." },
+  { slug: "bachelor-bachelorette", emoji: "💍", title: "Bachelor / Bachelorette", desc: "Better than a club. Cheaper than therapy." },
+  { slug: "music-videos-shoots", emoji: "🎬", title: "Music Videos & Shoots", desc: "Yes, someone actually filmed a music video here. It slapped." },
+  { slug: "brand-activations", emoji: "🏢", title: "Brand Activations", desc: "Photogenic chaos for your launch, popup, or PR stunt." },
+  { slug: "retirements-divorces-whatever", emoji: "🧓", title: "Retirements. Divorces. Whatever.", desc: "Forty years at the same job? Finally signed the papers? Cult disbanded? Book it. We don't ask questions. We just provide the ball pit." },
 ];
 
 const infoBlocks = [
@@ -107,13 +108,22 @@ const PrivateEvents = () => {
                   "bg-cool-gray/60",
                 ];
                 return (
-                  <div key={e.title} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
-                    <div className={`rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center text-8xl border-2 border-primary`}>
-                      {e.emoji}
+                  <Link
+                    key={e.title}
+                    to={`/private-events/${e.slug}`}
+                    className="snap-start shrink-0 w-[80vw] md:w-[380px] group"
+                  >
+                    <div className={`relative rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center border-2 border-primary border-dashed overflow-hidden transition-transform group-hover:-translate-y-1`}>
+                      <div className="text-center">
+                        <div className="text-7xl md:text-8xl">{e.emoji}</div>
+                        <p className="mt-3 font-mono uppercase tracking-[0.25em] text-[10px] md:text-xs text-navy/60">
+                          Upload image
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="mt-4 font-display text-2xl text-navy">{e.title}</h3>
+                    <h3 className="mt-4 font-display text-2xl text-navy group-hover:text-primary transition-colors">{e.title} →</h3>
                     <p className="mt-2 text-navy/80">{e.desc}</p>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
@@ -123,7 +133,7 @@ const PrivateEvents = () => {
       </section>
 
       {/* INFO + FORM */}
-      <section className="py-24 bg-white border-t border-navy/10">
+      <section id="contact" className="py-24 bg-white border-t border-navy/10 scroll-mt-24">
         <div className="container grid gap-16 lg:grid-cols-2">
           <div>
             <p className="italic text-primary text-sm mb-3">the boring but useful part.</p>
