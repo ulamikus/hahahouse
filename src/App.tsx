@@ -5,10 +5,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Tickets from "./pages/Tickets.tsx";
+import Tickets from "./pages/Tickets.tsx";
 import PrivateEvents from "./pages/PrivateEvents.tsx";
+import PrivateEventDetail from "./pages/PrivateEventDetail.tsx";
 import Shop from "./pages/Shop.tsx";
 import About from "./pages/About.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import { BlogIndex, BlogPost } from "./pages/Blog.tsx";
 
 const queryClient = new QueryClient();
 
