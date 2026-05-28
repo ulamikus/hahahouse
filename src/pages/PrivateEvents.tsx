@@ -133,7 +133,7 @@ const PrivateEvents = () => {
       </section>
 
       {/* INFO + FORM */}
-      <section className="py-24 bg-white border-t border-navy/10">
+      <section id="contact" className="py-24 bg-white border-t border-navy/10 scroll-mt-24">
         <div className="container grid gap-16 lg:grid-cols-2">
           <div>
             <p className="italic text-primary text-sm mb-3">the boring but useful part.</p>
