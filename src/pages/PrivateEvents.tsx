@@ -108,13 +108,22 @@ const PrivateEvents = () => {
                   "bg-cool-gray/60",
                 ];
                 return (
-                  <div key={e.title} className="snap-start shrink-0 w-[80vw] md:w-[380px]">
-                    <div className={`rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center text-8xl border-2 border-primary`}>
-                      {e.emoji}
+                  <Link
+                    key={e.title}
+                    to={`/private-events/${e.slug}`}
+                    className="snap-start shrink-0 w-[80vw] md:w-[380px] group"
+                  >
+                    <div className={`relative rounded-3xl ${tints[i % tints.length]} aspect-[4/3] grid place-items-center border-2 border-primary border-dashed overflow-hidden transition-transform group-hover:-translate-y-1`}>
+                      <div className="text-center">
+                        <div className="text-7xl md:text-8xl">{e.emoji}</div>
+                        <p className="mt-3 font-mono uppercase tracking-[0.25em] text-[10px] md:text-xs text-navy/60">
+                          Upload image
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="mt-4 font-display text-2xl text-navy">{e.title}</h3>
+                    <h3 className="mt-4 font-display text-2xl text-navy group-hover:text-primary transition-colors">{e.title} →</h3>
                     <p className="mt-2 text-navy/80">{e.desc}</p>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
