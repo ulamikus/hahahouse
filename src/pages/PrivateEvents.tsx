@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { z } from "zod";
 import Layout from "@/components/site/Layout";
@@ -32,6 +32,11 @@ const formSchema = z.object({
 });
 
 const PrivateEvents = () => {
+  useEffect(() => {
+    if (window.location.hash === "#contact") {
+      setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 100);
+    }
+  }, []);
   const [submitText, setSubmitText] = useState("Send It");
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
