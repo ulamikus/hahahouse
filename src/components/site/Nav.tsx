@@ -34,12 +34,14 @@ const Nav = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Link
-            to="/tickets"
+          <a
+            href="https://www.entrio.hr/en/event/hahahouse-muzej-smijeha-35858"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center rounded-full bg-yellow px-6 py-3 font-bold text-navy transition-colors hover:bg-red hover:text-white"
           >
             Tickets
-          </Link>
+          </a>
         </div>
 
         <button
@@ -64,13 +66,15 @@ const Nav = () => {
                 {l.label}
               </NavLink>
             ))}
-            <Link
-              to="/tickets"
+            <a
+              href="https://www.entrio.hr/en/event/hahahouse-muzej-smijeha-35858"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="rounded-full bg-yellow px-6 py-3 font-bold text-navy text-center"
             >
               Tickets
-            </Link>
+            </a>
           </div>
         </div>
       )}
