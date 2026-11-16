@@ -53,6 +53,38 @@ const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   return (
     <Layout>
+      {/* U.S. TRAVELERS */}
+      <section className="bg-white border-b border-navy/10">
+        <div className="container py-10 md:py-14 text-center max-w-4xl">
+          <p className="italic text-primary text-sm mb-3 uppercase tracking-[0.2em]">Visiting Croatia?</p>
+          <h2 className="font-display text-3xl md:text-5xl text-navy text-balance">
+            Plan your trip to Croatia with a visit to HaHaHouse.
+          </h2>
+          <p className="mt-4 text-navy/80 text-base md:text-lg">
+            Discover the Museum of Laughter in the heart of Zagreb, featuring over 40 interactive exhibits.
+          </p>
+          <p className="mt-5 inline-block rounded-2xl border-2 border-primary px-5 py-3 text-navy font-bold text-sm md:text-base">
+            Special offer: Exclusive for U.S. travelers: Enjoy a complimentary guided tour with your museum admission.
+          </p>
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="https://www.entrio.hr/en/event/hahahouse-muzej-smijeha-35858"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex justify-center rounded-full bg-yellow text-navy font-bold px-8 py-4 hover:bg-red hover:text-white transition-colors shadow-[0_8px_0_rgba(0,0,0,0.18)]"
+            >
+              BOOK YOUR VISIT
+            </a>
+            <Link
+              to="/private-events#contact"
+              className="inline-flex justify-center rounded-full border-2 border-primary text-primary font-bold px-8 py-4 hover:bg-primary hover:text-white transition-colors"
+            >
+              BOOK A VIRTUAL TOUR
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* HERO, full-bleed walkthrough video, Color Factory style */}
       <section className="relative w-full h-[88vh] min-h-[560px] overflow-hidden bg-navy">
         {/* Video layer */}
