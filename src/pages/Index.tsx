@@ -14,6 +14,7 @@ import exhibitLaundryWall from "@/assets/exhibit-laundry-wall.jpg";
 import exhibitWashers from "@/assets/exhibit-washers.jpg";
 import exhibitBallpit from "@/assets/exhibit-ballpit.jpg";
 import exhibitWheel from "@/assets/exhibit-wheel.jpg";
+import nycFlashMob from "@/assets/nyc-flash-mob.jpg";
 
 const exhibits = [
   { img: exhibitSumo, label: "The Arena", desc: "Suit up, square off, and find out who in your group has been waiting their whole life to do this.", color: "bg-yellow" },
@@ -82,6 +83,28 @@ const Index = () => {
               BOOK A VIRTUAL TOUR
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* NYC FLASH MOB */}
+      <section className="bg-white border-b border-navy/10">
+        <div className="container py-10 md:py-14 grid gap-8 md:grid-cols-2 md:items-center">
+          <div className="text-center md:text-left">
+            <p className="italic text-primary text-sm mb-3 uppercase tracking-[0.2em]">New York · January 12</p>
+            <h2 className="font-display text-3xl md:text-5xl text-navy text-balance">
+              Join us for the flash mob experience in New York City.
+            </h2>
+            <p className="mt-4 text-navy/80 text-base md:text-lg">
+              On January 12, HaHaHouse takes over New York City. Get in touch if you'd like to be involved and get more info.
+            </p>
+            <Link
+              to="/private-events#contact"
+              className="mt-7 inline-flex w-full sm:w-auto justify-center rounded-full bg-yellow text-navy font-bold px-8 py-4 hover:bg-red hover:text-white transition-colors shadow-[0_8px_0_rgba(0,0,0,0.18)]"
+            >
+              GET IN TOUCH
+            </Link>
+          </div>
+          <img src={nycFlashMob} alt="New York City" loading="lazy" className="w-full aspect-[4/3] object-cover rounded-3xl" />
         </div>
       </section>
 
