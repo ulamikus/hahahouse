@@ -168,12 +168,14 @@ const Index = () => {
         </div>
 
         {/* Tickets corner */}
-        <Link
-          to="/tickets"
+        <a
+          href="https://www.entrio.hr/en/event/hahahouse-muzej-smijeha-35858"
+          target="_blank"
+          rel="noopener noreferrer"
           className="absolute bottom-16 left-1/2 -translate-x-1/2 md:bottom-20 z-20 inline-flex items-center rounded-full bg-yellow text-navy font-bold px-6 py-3 md:px-8 md:py-4 shadow-[0_8px_0_rgba(0,0,0,0.25)] hover:bg-red hover:text-white transition-colors"
         >
           BUY TICKETS
-        </Link>
+        </a>
       </section>
 
       {/* Sub-hero strip */}

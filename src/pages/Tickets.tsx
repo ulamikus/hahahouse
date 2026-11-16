@@ -132,9 +132,9 @@ const Tickets = () => (
               </h3>
               <p className="mt-2 font-display text-5xl text-navy">{t.price}</p>
               <p className="mt-3 text-navy/80 flex-1">{t.desc}</p>
-              <button className="mt-6 group rounded-full bg-navy text-white font-bold px-6 py-3 hover:bg-primary transition-colors">
+              <a href="https://www.entrio.hr/en/event/hahahouse-muzej-smijeha-35858" target="_blank" rel="noopener noreferrer" className="mt-6 group rounded-full bg-navy text-white font-bold px-6 py-3 hover:bg-primary transition-colors text-center">
                 Buy Now
-              </button>
+              </a>
             </div>
           ))}
         </div>

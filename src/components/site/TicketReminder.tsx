@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 type Props = {
   headline?: string;
@@ -14,12 +13,14 @@ const TicketReminder = ({
       <h2 className="font-display text-4xl md:text-6xl text-navy text-balance max-w-4xl mx-auto">
         {headline}
       </h2>
-      <Link
-        to="/tickets"
+      <a
+        href="https://www.entrio.hr/en/event/hahahouse-muzej-smijeha-35858"
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-10 inline-flex items-center rounded-full bg-primary text-white font-bold px-8 py-4 text-lg hover:bg-navy transition-colors"
       >
         {cta}
-      </Link>
+      </a>
     </div>
   </section>
 );
